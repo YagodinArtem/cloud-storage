@@ -40,15 +40,12 @@ public class ClientHandler implements Runnable {
                 String fromClient = dis.readUTF();
                 if (fromClient.equals("/^transfer")) {
                     receive();
-                } else {
-                    System.out.println("ждем");
                 }
-                System.out.println("я вышел");
             }
         } catch (StringIndexOutOfBoundsException e) {
             LOG.trace("Client disconnected " + this);
         } catch (IOException e) {
-           LOG.trace("IOE");
+            LOG.trace("IOE");
         } finally {
             try {
                 dis.close();
@@ -60,7 +57,6 @@ public class ClientHandler implements Runnable {
     }
 
     private void receive() {
-        System.out.println("я тут ресиве");
         try {
             dos.writeUTF("/^ready");
             dos.flush();
@@ -74,13 +70,14 @@ public class ClientHandler implements Runnable {
             int count;
             long size = 0;
 
-            if(fileLength != 0) {
+            if (fileLength != 0) {
                 while ((count = dis.read(buffer)) >= 0) {
                     fos.write(buffer, 0, count);
                     if ((size += count) >= fileLength) break;
                 }
                 fos.flush();
             }
+            LOG.trace("File received: " + fileName + " " + file.length());
         } catch (SocketException e) {
             LOG.trace("Connection interrupted " + this);
         } catch (IOException e) {

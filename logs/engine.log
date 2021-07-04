@@ -297,3 +297,12 @@ INFO  2021-07-04 13:09:01 [main] core.Server (Server.java:19) - Client connected
 INFO  2021-07-04 13:09:01 [main] core.Server (Server.java:17) - Awaiting client connection
 TRACE 2021-07-04 13:09:35 [Thread-2] core.ClientHandler (ClientHandler.java:51) - IOE
 TRACE 2021-07-04 13:09:35 [Thread-3] core.ClientHandler (ClientHandler.java:51) - IOE
+TRACE 2021-07-04 13:18:52 [main] core.Server (Server.java:15) - Server started
+INFO  2021-07-04 13:18:52 [main] core.Server (Server.java:17) - Awaiting client connection
+INFO  2021-07-04 13:18:56 [main] core.Server (Server.java:19) - Client connected
+INFO  2021-07-04 13:18:56 [main] core.Server (Server.java:17) - Awaiting client connection
+TRACE 2021-07-04 13:20:48 [main] core.Server (Server.java:15) - Server started
+INFO  2021-07-04 13:20:48 [main] core.Server (Server.java:17) - Awaiting client connection
+INFO  2021-07-04 13:20:49 [main] core.Server (Server.java:19) - Client connected
+INFO  2021-07-04 13:20:49 [main] core.Server (Server.java:17) - Awaiting client connection
+TRACE 2021-07-04 13:20:53 [Thread-1] core.ClientHandler (ClientHandler.java:80) - File received: 20210314132444_1.jpg 248832

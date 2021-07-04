@@ -133,3 +133,9 @@ TRACE 2021-07-04 13:09:09 [JavaFX Application Thread] UiController (UiController
 TRACE 2021-07-04 13:09:09 [JavaFX Application Thread] UiController (UiController.java:88) - Transfer finished successfully 20210319221202_1.jpg size: 402035
 TRACE 2021-07-04 13:09:32 [JavaFX Application Thread] UiController (UiController.java:82) - Transfer started - not_empty.txt size: 21
 TRACE 2021-07-04 13:09:32 [JavaFX Application Thread] UiController (UiController.java:88) - Transfer finished successfully not_empty.txt size: 21
+TRACE 2021-07-04 13:18:56 [JavaFX Application Thread] UiController (UiController.java:55) - Client started
+TRACE 2021-07-04 13:19:01 [JavaFX Application Thread] UiController (UiController.java:81) - Transfer started - 20210314132444_1.jpg size: 248563
+TRACE 2021-07-04 13:19:01 [JavaFX Application Thread] UiController (UiController.java:87) - Transfer finished successfully 20210314132444_1.jpg size: 248563
+TRACE 2021-07-04 13:20:49 [JavaFX Application Thread] UiController (UiController.java:55) - Client started
+TRACE 2021-07-04 13:20:53 [JavaFX Application Thread] UiController (UiController.java:81) - Transfer started - 20210314132444_1.jpg size: 248563
+TRACE 2021-07-04 13:20:53 [JavaFX Application Thread] UiController (UiController.java:87) - Transfer finished successfully 20210314132444_1.jpg size: 248563

@@ -33,3 +33,4 @@ ERROR 2021-07-04 13:03:26 [JavaFX Application Thread] UiController (UiController
 ERROR 2021-07-04 13:06:14 [JavaFX Application Thread] UiController (UiController.java:59) - Unable to start client, possible server is down
 ERROR 2021-07-04 13:06:19 [JavaFX Application Thread] UiController (UiController.java:59) - Unable to start client, possible server is down
 ERROR 2021-07-04 13:08:25 [JavaFX Application Thread] UiController (UiController.java:59) - Unable to start client, possible server is down
+ERROR 2021-07-04 13:18:52 [JavaFX Application Thread] UiController (UiController.java:58) - Unable to start client, possible server is down
