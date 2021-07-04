@@ -1,0 +1,35 @@
+ERROR 2021-07-04 11:28:47 [JavaFX Application Thread] UiController (UiController.java:54) - Unable to initialize client instance
+ERROR 2021-07-04 11:38:52 [JavaFX Application Thread] UiController (UiController.java:54) - Unable to initialize client instance
+ERROR 2021-07-04 11:41:48 [JavaFX Application Thread] UiController (UiController.java:54) - Unable to start client, possible server is down
+ERROR 2021-07-04 11:45:40 [JavaFX Application Thread] UiController (UiController.java:54) - Unable to start client, possible server is down
+ERROR 2021-07-04 11:47:19 [JavaFX Application Thread] UiController (UiController.java:54) - Unable to start client, possible server is down
+ERROR 2021-07-04 11:47:24 [JavaFX Application Thread] UiController (UiController.java:54) - Unable to start client, possible server is down
+ERROR 2021-07-04 11:47:26 [JavaFX Application Thread] UiController (UiController.java:54) - Unable to start client, possible server is down
+ERROR 2021-07-04 11:49:47 [JavaFX Application Thread] UiController (UiController.java:54) - Unable to start client, possible server is down
+ERROR 2021-07-04 11:57:49 [JavaFX Application Thread] UiController (UiController.java:54) - Unable to start client, possible server is down
+ERROR 2021-07-04 12:04:10 [JavaFX Application Thread] UiController (UiController.java:83) - Exception I/O when sending file
+ERROR 2021-07-04 12:05:15 [JavaFX Application Thread] UiController (UiController.java:54) - Unable to start client, possible server is down
+ERROR 2021-07-04 12:06:03 [JavaFX Application Thread] UiController (UiController.java:83) - Exception I/O when sending file
+ERROR 2021-07-04 12:06:12 [JavaFX Application Thread] UiController (UiController.java:83) - Exception I/O when sending file
+ERROR 2021-07-04 12:14:08 [JavaFX Application Thread] UiController (UiController.java:83) - Exception I/O when sending file
+ERROR 2021-07-04 12:14:54 [JavaFX Application Thread] UiController (UiController.java:54) - Unable to start client, possible server is down
+ERROR 2021-07-04 12:16:11 [JavaFX Application Thread] UiController (UiController.java:54) - Unable to start client, possible server is down
+ERROR 2021-07-04 12:18:32 [JavaFX Application Thread] UiController (UiController.java:54) - Unable to start client, possible server is down
+ERROR 2021-07-04 12:20:10 [JavaFX Application Thread] UiController (UiController.java:54) - Unable to start client, possible server is down
+ERROR 2021-07-04 12:22:32 [JavaFX Application Thread] UiController (UiController.java:54) - Unable to start client, possible server is down
+ERROR 2021-07-04 12:28:04 [JavaFX Application Thread] UiController (UiController.java:54) - Unable to start client, possible server is down
+ERROR 2021-07-04 12:33:12 [JavaFX Application Thread] UiController (UiController.java:84) - Exception I/O when sending file
+ERROR 2021-07-04 12:34:44 [JavaFX Application Thread] UiController (UiController.java:84) - Exception I/O when sending file
+ERROR 2021-07-04 12:36:27 [JavaFX Application Thread] UiController (UiController.java:54) - Unable to start client, possible server is down
+ERROR 2021-07-04 12:36:35 [JavaFX Application Thread] UiController (UiController.java:84) - Exception I/O when sending file
+ERROR 2021-07-04 12:36:57 [JavaFX Application Thread] UiController (UiController.java:84) - Exception I/O when sending file
+ERROR 2021-07-04 12:38:58 [JavaFX Application Thread] UiController (UiController.java:84) - Exception I/O when sending file
+ERROR 2021-07-04 12:39:40 [JavaFX Application Thread] UiController (UiController.java:54) - Unable to start client, possible server is down
+ERROR 2021-07-04 12:42:52 [JavaFX Application Thread] UiController (UiController.java:54) - Unable to start client, possible server is down
+ERROR 2021-07-04 12:49:23 [JavaFX Application Thread] UiController (UiController.java:84) - Exception I/O when sending file
+ERROR 2021-07-04 13:01:16 [JavaFX Application Thread] UiController (UiController.java:54) - Unable to start client, possible server is down
+ERROR 2021-07-04 13:01:39 [JavaFX Application Thread] UiController (UiController.java:54) - Unable to start client, possible server is down
+ERROR 2021-07-04 13:03:26 [JavaFX Application Thread] UiController (UiController.java:54) - Unable to start client, possible server is down
+ERROR 2021-07-04 13:06:14 [JavaFX Application Thread] UiController (UiController.java:59) - Unable to start client, possible server is down
+ERROR 2021-07-04 13:06:19 [JavaFX Application Thread] UiController (UiController.java:59) - Unable to start client, possible server is down
+ERROR 2021-07-04 13:08:25 [JavaFX Application Thread] UiController (UiController.java:59) - Unable to start client, possible server is down

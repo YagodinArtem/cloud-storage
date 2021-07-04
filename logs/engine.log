@@ -1,0 +1,299 @@
+TRACE 2021-07-03 10:09:50 [main] core.Server (Server.java:15) - Server started
+INFO  2021-07-03 10:09:50 [main] core.Server (Server.java:17) - Awaiting client connection
+INFO  2021-07-03 10:10:11 [main] core.Server (Server.java:19) - Client connected
+INFO  2021-07-03 10:10:11 [main] core.Server (Server.java:17) - Awaiting client connection
+TRACE 2021-07-03 10:21:48 [main] core.Server (Server.java:15) - Server started
+INFO  2021-07-03 10:21:48 [main] core.Server (Server.java:17) - Awaiting client connection
+INFO  2021-07-03 10:21:58 [main] core.Server (Server.java:19) - Client connected
+INFO  2021-07-03 10:21:58 [main] core.Server (Server.java:17) - Awaiting client connection
+INFO  2021-07-03 10:22:19 [main] core.Server (Server.java:19) - Client connected
+INFO  2021-07-03 10:22:19 [main] core.Server (Server.java:17) - Awaiting client connection
+INFO  2021-07-03 10:24:14 [main] core.Server (Server.java:19) - Client connected
+INFO  2021-07-03 10:24:14 [main] core.Server (Server.java:17) - Awaiting client connection
+INFO  2021-07-03 10:24:14 [main] core.Server (Server.java:19) - Client connected
+INFO  2021-07-03 10:24:14 [main] core.Server (Server.java:17) - Awaiting client connection
+INFO  2021-07-03 10:24:15 [main] core.Server (Server.java:19) - Client connected
+INFO  2021-07-03 10:24:15 [main] core.Server (Server.java:17) - Awaiting client connection
+INFO  2021-07-03 10:24:20 [main] core.Server (Server.java:19) - Client connected
+INFO  2021-07-03 10:24:20 [main] core.Server (Server.java:17) - Awaiting client connection
+INFO  2021-07-03 10:24:50 [main] core.Server (Server.java:19) - Client connected
+INFO  2021-07-03 10:24:50 [main] core.Server (Server.java:17) - Awaiting client connection
+INFO  2021-07-03 10:25:03 [main] core.Server (Server.java:19) - Client connected
+INFO  2021-07-03 10:25:03 [main] core.Server (Server.java:17) - Awaiting client connection
+INFO  2021-07-03 10:25:40 [main] core.Server (Server.java:19) - Client connected
+INFO  2021-07-03 10:25:40 [main] core.Server (Server.java:17) - Awaiting client connection
+TRACE 2021-07-03 10:27:36 [main] core.Server (Server.java:15) - Server started
+INFO  2021-07-03 10:27:36 [main] core.Server (Server.java:17) - Awaiting client connection
+INFO  2021-07-03 10:27:53 [main] core.Server (Server.java:19) - Client connected
+INFO  2021-07-03 10:27:53 [main] core.Server (Server.java:17) - Awaiting client connection
+TRACE 2021-07-03 10:28:09 [Thread-1] core.ClientHandler (ClientHandler.java:41) - Client disconnected + core.ClientHandler@49a1393d
+TRACE 2021-07-03 10:30:00 [main] core.Server (Server.java:15) - Server started
+INFO  2021-07-03 10:30:00 [main] core.Server (Server.java:17) - Awaiting client connection
+INFO  2021-07-03 10:30:10 [main] core.Server (Server.java:19) - Client connected
+INFO  2021-07-03 10:30:10 [main] core.Server (Server.java:17) - Awaiting client connection
+TRACE 2021-07-03 10:30:49 [Thread-1] core.ClientHandler (ClientHandler.java:39) - Client disconnected core.ClientHandler@77ac96d
+TRACE 2021-07-03 12:18:11 [main] core.Server (Server.java:15) - Server started
+INFO  2021-07-03 12:18:11 [main] core.Server (Server.java:17) - Awaiting client connection
+INFO  2021-07-03 12:18:16 [main] core.Server (Server.java:19) - Client connected
+INFO  2021-07-03 12:18:16 [main] core.Server (Server.java:17) - Awaiting client connection
+INFO  2021-07-03 12:20:35 [main] core.Server (Server.java:19) - Client connected
+INFO  2021-07-03 12:20:35 [main] core.Server (Server.java:17) - Awaiting client connection
+INFO  2021-07-03 12:22:11 [main] core.Server (Server.java:19) - Client connected
+INFO  2021-07-03 12:22:11 [main] core.Server (Server.java:17) - Awaiting client connection
+TRACE 2021-07-03 12:23:15 [main] core.Server (Server.java:15) - Server started
+INFO  2021-07-03 12:23:15 [main] core.Server (Server.java:17) - Awaiting client connection
+INFO  2021-07-03 12:23:22 [main] core.Server (Server.java:19) - Client connected
+INFO  2021-07-03 12:23:22 [main] core.Server (Server.java:17) - Awaiting client connection
+INFO  2021-07-03 12:24:27 [main] core.Server (Server.java:19) - Client connected
+INFO  2021-07-03 12:24:27 [main] core.Server (Server.java:17) - Awaiting client connection
+TRACE 2021-07-03 12:26:23 [main] core.Server (Server.java:15) - Server started
+INFO  2021-07-03 12:26:23 [main] core.Server (Server.java:17) - Awaiting client connection
+INFO  2021-07-03 12:26:27 [main] core.Server (Server.java:19) - Client connected
+INFO  2021-07-03 12:26:27 [main] core.Server (Server.java:17) - Awaiting client connection
+INFO  2021-07-03 12:28:42 [main] core.Server (Server.java:19) - Client connected
+INFO  2021-07-03 12:28:42 [main] core.Server (Server.java:17) - Awaiting client connection
+TRACE 2021-07-03 12:31:51 [main] core.Server (Server.java:15) - Server started
+INFO  2021-07-03 12:31:51 [main] core.Server (Server.java:17) - Awaiting client connection
+INFO  2021-07-03 12:31:54 [main] core.Server (Server.java:19) - Client connected
+INFO  2021-07-03 12:31:54 [main] core.Server (Server.java:17) - Awaiting client connection
+INFO  2021-07-03 12:32:10 [main] core.Server (Server.java:19) - Client connected
+INFO  2021-07-03 12:32:10 [main] core.Server (Server.java:17) - Awaiting client connection
+INFO  2021-07-03 12:34:56 [main] core.Server (Server.java:19) - Client connected
+INFO  2021-07-03 12:34:56 [main] core.Server (Server.java:17) - Awaiting client connection
+INFO  2021-07-03 12:36:02 [main] core.Server (Server.java:19) - Client connected
+INFO  2021-07-03 12:36:02 [main] core.Server (Server.java:17) - Awaiting client connection
+INFO  2021-07-03 12:36:57 [main] core.Server (Server.java:19) - Client connected
+INFO  2021-07-03 12:36:57 [main] core.Server (Server.java:17) - Awaiting client connection
+TRACE 2021-07-03 13:02:02 [main] core.Server (Server.java:15) - Server started
+INFO  2021-07-03 13:02:02 [main] core.Server (Server.java:17) - Awaiting client connection
+INFO  2021-07-03 13:02:10 [main] core.Server (Server.java:19) - Client connected
+INFO  2021-07-03 13:02:10 [main] core.Server (Server.java:17) - Awaiting client connection
+TRACE 2021-07-03 13:02:11 [Thread-1] core.ClientHandler (ClientHandler.java:65) - Client disconnected core.ClientHandler@135d9204
+INFO  2021-07-03 13:03:32 [main] core.Server (Server.java:19) - Client connected
+INFO  2021-07-03 13:03:32 [main] core.Server (Server.java:17) - Awaiting client connection
+TRACE 2021-07-03 13:05:05 [Thread-2] core.ClientHandler (ClientHandler.java:65) - Client disconnected core.ClientHandler@74a726b7
+INFO  2021-07-03 13:05:33 [main] core.Server (Server.java:19) - Client connected
+INFO  2021-07-03 13:05:33 [main] core.Server (Server.java:17) - Awaiting client connection
+TRACE 2021-07-03 13:06:34 [Thread-3] core.ClientHandler (ClientHandler.java:65) - Client disconnected core.ClientHandler@7d939f48
+INFO  2021-07-03 13:06:37 [main] core.Server (Server.java:19) - Client connected
+INFO  2021-07-03 13:06:37 [main] core.Server (Server.java:17) - Awaiting client connection
+TRACE 2021-07-03 13:07:39 [Thread-4] core.ClientHandler (ClientHandler.java:65) - Client disconnected core.ClientHandler@160dd459
+INFO  2021-07-03 13:08:21 [main] core.Server (Server.java:19) - Client connected
+INFO  2021-07-03 13:08:21 [main] core.Server (Server.java:17) - Awaiting client connection
+TRACE 2021-07-03 13:09:39 [Thread-5] core.ClientHandler (ClientHandler.java:65) - Client disconnected core.ClientHandler@6e7adf24
+INFO  2021-07-03 13:09:44 [main] core.Server (Server.java:19) - Client connected
+INFO  2021-07-03 13:09:44 [main] core.Server (Server.java:17) - Awaiting client connection
+TRACE 2021-07-03 13:11:29 [Thread-6] core.ClientHandler (ClientHandler.java:65) - Client disconnected core.ClientHandler@229aba3e
+INFO  2021-07-03 13:11:32 [main] core.Server (Server.java:19) - Client connected
+INFO  2021-07-03 13:11:32 [main] core.Server (Server.java:17) - Awaiting client connection
+TRACE 2021-07-04 10:49:37 [main] core.Server (Server.java:15) - Server started
+INFO  2021-07-04 10:49:37 [main] core.Server (Server.java:17) - Awaiting client connection
+INFO  2021-07-04 10:49:43 [main] core.Server (Server.java:19) - Client connected
+INFO  2021-07-04 10:49:43 [main] core.Server (Server.java:17) - Awaiting client connection
+TRACE 2021-07-04 10:50:21 [Thread-1] core.ClientHandler (ClientHandler.java:65) - Client disconnected core.ClientHandler@3907d1aa
+INFO  2021-07-04 10:50:26 [main] core.Server (Server.java:19) - Client connected
+INFO  2021-07-04 10:50:26 [main] core.Server (Server.java:17) - Awaiting client connection
+TRACE 2021-07-04 10:50:28 [Thread-2] core.ClientHandler (ClientHandler.java:65) - Client disconnected core.ClientHandler@4337f30d
+INFO  2021-07-04 10:50:52 [main] core.Server (Server.java:19) - Client connected
+INFO  2021-07-04 10:50:52 [main] core.Server (Server.java:17) - Awaiting client connection
+TRACE 2021-07-04 10:51:41 [Thread-3] core.ClientHandler (ClientHandler.java:65) - Client disconnected core.ClientHandler@3f0cdb26
+TRACE 2021-07-04 11:10:59 [main] core.Server (Server.java:15) - Server started
+INFO  2021-07-04 11:10:59 [main] core.Server (Server.java:17) - Awaiting client connection
+INFO  2021-07-04 11:11:03 [main] core.Server (Server.java:19) - Client connected
+INFO  2021-07-04 11:11:03 [main] core.Server (Server.java:17) - Awaiting client connection
+TRACE 2021-07-04 11:29:04 [main] core.Server (Server.java:15) - Server started
+INFO  2021-07-04 11:29:04 [main] core.Server (Server.java:17) - Awaiting client connection
+INFO  2021-07-04 11:29:10 [main] core.Server (Server.java:19) - Client connected
+INFO  2021-07-04 11:29:10 [main] core.Server (Server.java:17) - Awaiting client connection
+TRACE 2021-07-04 11:30:35 [main] core.Server (Server.java:15) - Server started
+INFO  2021-07-04 11:30:35 [main] core.Server (Server.java:17) - Awaiting client connection
+INFO  2021-07-04 11:30:48 [main] core.Server (Server.java:19) - Client connected
+INFO  2021-07-04 11:30:48 [main] core.Server (Server.java:17) - Awaiting client connection
+TRACE 2021-07-04 11:34:39 [Thread-1] core.ClientHandler (ClientHandler.java:38) - Client disconnected core.ClientHandler@3907d1aa
+INFO  2021-07-04 11:34:52 [main] core.Server (Server.java:19) - Client connected
+INFO  2021-07-04 11:34:52 [main] core.Server (Server.java:17) - Awaiting client connection
+TRACE 2021-07-04 11:35:23 [Thread-2] core.ClientHandler (ClientHandler.java:38) - Client disconnected core.ClientHandler@64a08c20
+TRACE 2021-07-04 11:39:29 [main] core.Server (Server.java:15) - Server started
+INFO  2021-07-04 11:39:29 [main] core.Server (Server.java:17) - Awaiting client connection
+INFO  2021-07-04 11:39:37 [main] core.Server (Server.java:19) - Client connected
+INFO  2021-07-04 11:39:37 [main] core.Server (Server.java:17) - Awaiting client connection
+TRACE 2021-07-04 11:47:37 [main] core.Server (Server.java:15) - Server started
+INFO  2021-07-04 11:47:37 [main] core.Server (Server.java:17) - Awaiting client connection
+INFO  2021-07-04 11:47:39 [main] core.Server (Server.java:19) - Client connected
+INFO  2021-07-04 11:47:39 [main] core.Server (Server.java:17) - Awaiting client connection
+TRACE 2021-07-04 11:49:52 [main] core.Server (Server.java:15) - Server started
+INFO  2021-07-04 11:49:52 [main] core.Server (Server.java:17) - Awaiting client connection
+INFO  2021-07-04 11:49:56 [main] core.Server (Server.java:19) - Client connected
+INFO  2021-07-04 11:49:56 [main] core.Server (Server.java:17) - Awaiting client connection
+TRACE 2021-07-04 11:50:20 [Thread-1] core.ClientHandler (ClientHandler.java:38) - Client disconnected core.ClientHandler@3338c45a
+INFO  2021-07-04 11:50:53 [main] core.Server (Server.java:19) - Client connected
+INFO  2021-07-04 11:50:53 [main] core.Server (Server.java:17) - Awaiting client connection
+TRACE 2021-07-04 11:52:23 [Thread-2] core.ClientHandler (ClientHandler.java:38) - Client disconnected core.ClientHandler@28e24e75
+INFO  2021-07-04 11:53:32 [main] core.Server (Server.java:19) - Client connected
+INFO  2021-07-04 11:53:32 [main] core.Server (Server.java:17) - Awaiting client connection
+TRACE 2021-07-04 11:54:46 [Thread-3] core.ClientHandler (ClientHandler.java:38) - Client disconnected core.ClientHandler@6af3eb74
+TRACE 2021-07-04 11:57:55 [main] core.Server (Server.java:15) - Server started
+INFO  2021-07-04 11:57:55 [main] core.Server (Server.java:17) - Awaiting client connection
+INFO  2021-07-04 11:57:56 [main] core.Server (Server.java:19) - Client connected
+INFO  2021-07-04 11:57:56 [main] core.Server (Server.java:17) - Awaiting client connection
+TRACE 2021-07-04 11:58:30 [Thread-1] core.ClientHandler (ClientHandler.java:69) - Connection interrupted core.ClientHandler@782b1bf1
+TRACE 2021-07-04 11:58:30 [Thread-1] core.ClientHandler (ClientHandler.java:40) - Client disconnected core.ClientHandler@782b1bf1
+INFO  2021-07-04 12:00:26 [main] core.Server (Server.java:19) - Client connected
+INFO  2021-07-04 12:00:26 [main] core.Server (Server.java:17) - Awaiting client connection
+TRACE 2021-07-04 12:00:33 [main] core.Server (Server.java:15) - Server started
+INFO  2021-07-04 12:00:33 [main] core.Server (Server.java:17) - Awaiting client connection
+INFO  2021-07-04 12:00:37 [main] core.Server (Server.java:19) - Client connected
+INFO  2021-07-04 12:00:37 [main] core.Server (Server.java:17) - Awaiting client connection
+TRACE 2021-07-04 12:02:46 [main] core.Server (Server.java:15) - Server started
+INFO  2021-07-04 12:02:46 [main] core.Server (Server.java:17) - Awaiting client connection
+INFO  2021-07-04 12:02:51 [main] core.Server (Server.java:19) - Client connected
+INFO  2021-07-04 12:02:51 [main] core.Server (Server.java:17) - Awaiting client connection
+TRACE 2021-07-04 12:05:21 [main] core.Server (Server.java:15) - Server started
+INFO  2021-07-04 12:05:21 [main] core.Server (Server.java:17) - Awaiting client connection
+INFO  2021-07-04 12:05:24 [main] core.Server (Server.java:19) - Client connected
+INFO  2021-07-04 12:05:24 [main] core.Server (Server.java:17) - Awaiting client connection
+TRACE 2021-07-04 12:08:05 [main] core.Server (Server.java:15) - Server started
+INFO  2021-07-04 12:08:05 [main] core.Server (Server.java:17) - Awaiting client connection
+INFO  2021-07-04 12:08:10 [main] core.Server (Server.java:19) - Client connected
+INFO  2021-07-04 12:08:10 [main] core.Server (Server.java:17) - Awaiting client connection
+TRACE 2021-07-04 12:08:58 [Thread-1] core.ClientHandler (ClientHandler.java:76) - Connection interrupted core.ClientHandler@2f8a99ed
+TRACE 2021-07-04 12:08:58 [Thread-1] core.ClientHandler (ClientHandler.java:47) - Client disconnected core.ClientHandler@2f8a99ed
+TRACE 2021-07-04 12:12:20 [main] core.Server (Server.java:15) - Server started
+INFO  2021-07-04 12:12:20 [main] core.Server (Server.java:17) - Awaiting client connection
+INFO  2021-07-04 12:12:23 [main] core.Server (Server.java:19) - Client connected
+INFO  2021-07-04 12:12:23 [main] core.Server (Server.java:17) - Awaiting client connection
+TRACE 2021-07-04 12:13:47 [main] core.Server (Server.java:15) - Server started
+INFO  2021-07-04 12:13:47 [main] core.Server (Server.java:17) - Awaiting client connection
+INFO  2021-07-04 12:13:50 [main] core.Server (Server.java:19) - Client connected
+INFO  2021-07-04 12:13:50 [main] core.Server (Server.java:17) - Awaiting client connection
+TRACE 2021-07-04 12:14:55 [main] core.Server (Server.java:15) - Server started
+INFO  2021-07-04 12:14:55 [main] core.Server (Server.java:17) - Awaiting client connection
+INFO  2021-07-04 12:14:56 [main] core.Server (Server.java:19) - Client connected
+INFO  2021-07-04 12:14:56 [main] core.Server (Server.java:17) - Awaiting client connection
+TRACE 2021-07-04 12:16:12 [main] core.Server (Server.java:15) - Server started
+INFO  2021-07-04 12:16:12 [main] core.Server (Server.java:17) - Awaiting client connection
+INFO  2021-07-04 12:16:14 [main] core.Server (Server.java:19) - Client connected
+INFO  2021-07-04 12:16:14 [main] core.Server (Server.java:17) - Awaiting client connection
+TRACE 2021-07-04 12:16:44 [main] core.Server (Server.java:15) - Server started
+INFO  2021-07-04 12:16:44 [main] core.Server (Server.java:17) - Awaiting client connection
+INFO  2021-07-04 12:16:48 [main] core.Server (Server.java:19) - Client connected
+INFO  2021-07-04 12:16:48 [main] core.Server (Server.java:17) - Awaiting client connection
+TRACE 2021-07-04 12:18:33 [main] core.Server (Server.java:15) - Server started
+INFO  2021-07-04 12:18:33 [main] core.Server (Server.java:17) - Awaiting client connection
+INFO  2021-07-04 12:18:37 [main] core.Server (Server.java:19) - Client connected
+INFO  2021-07-04 12:18:37 [main] core.Server (Server.java:17) - Awaiting client connection
+TRACE 2021-07-04 12:20:10 [main] core.Server (Server.java:15) - Server started
+INFO  2021-07-04 12:20:10 [main] core.Server (Server.java:17) - Awaiting client connection
+INFO  2021-07-04 12:20:24 [main] core.Server (Server.java:19) - Client connected
+INFO  2021-07-04 12:20:24 [main] core.Server (Server.java:17) - Awaiting client connection
+TRACE 2021-07-04 12:20:58 [main] core.Server (Server.java:15) - Server started
+INFO  2021-07-04 12:20:58 [main] core.Server (Server.java:17) - Awaiting client connection
+INFO  2021-07-04 12:21:10 [main] core.Server (Server.java:19) - Client connected
+INFO  2021-07-04 12:21:10 [main] core.Server (Server.java:17) - Awaiting client connection
+TRACE 2021-07-04 12:21:41 [Thread-1] core.ClientHandler (ClientHandler.java:80) - Connection interrupted core.ClientHandler@1fc56a67
+TRACE 2021-07-04 12:21:41 [Thread-1] core.ClientHandler (ClientHandler.java:49) - Client disconnected core.ClientHandler@1fc56a67
+TRACE 2021-07-04 12:22:38 [main] core.Server (Server.java:15) - Server started
+INFO  2021-07-04 12:22:38 [main] core.Server (Server.java:17) - Awaiting client connection
+INFO  2021-07-04 12:22:44 [main] core.Server (Server.java:19) - Client connected
+INFO  2021-07-04 12:22:44 [main] core.Server (Server.java:17) - Awaiting client connection
+TRACE 2021-07-04 12:24:24 [main] core.Server (Server.java:15) - Server started
+INFO  2021-07-04 12:24:24 [main] core.Server (Server.java:17) - Awaiting client connection
+INFO  2021-07-04 12:24:28 [main] core.Server (Server.java:19) - Client connected
+INFO  2021-07-04 12:24:28 [main] core.Server (Server.java:17) - Awaiting client connection
+TRACE 2021-07-04 12:28:05 [main] core.Server (Server.java:15) - Server started
+INFO  2021-07-04 12:28:05 [main] core.Server (Server.java:17) - Awaiting client connection
+INFO  2021-07-04 12:28:05 [main] core.Server (Server.java:19) - Client connected
+INFO  2021-07-04 12:28:06 [main] core.Server (Server.java:17) - Awaiting client connection
+TRACE 2021-07-04 12:29:40 [main] core.Server (Server.java:15) - Server started
+INFO  2021-07-04 12:29:40 [main] core.Server (Server.java:17) - Awaiting client connection
+INFO  2021-07-04 12:29:42 [main] core.Server (Server.java:19) - Client connected
+INFO  2021-07-04 12:29:42 [main] core.Server (Server.java:17) - Awaiting client connection
+TRACE 2021-07-04 12:30:24 [main] core.Server (Server.java:15) - Server started
+INFO  2021-07-04 12:30:24 [main] core.Server (Server.java:17) - Awaiting client connection
+INFO  2021-07-04 12:30:26 [main] core.Server (Server.java:19) - Client connected
+INFO  2021-07-04 12:30:26 [main] core.Server (Server.java:17) - Awaiting client connection
+TRACE 2021-07-04 12:31:06 [main] core.Server (Server.java:15) - Server started
+INFO  2021-07-04 12:31:06 [main] core.Server (Server.java:17) - Awaiting client connection
+INFO  2021-07-04 12:31:09 [main] core.Server (Server.java:19) - Client connected
+INFO  2021-07-04 12:31:09 [main] core.Server (Server.java:17) - Awaiting client connection
+TRACE 2021-07-04 12:33:04 [main] core.Server (Server.java:15) - Server started
+INFO  2021-07-04 12:33:04 [main] core.Server (Server.java:17) - Awaiting client connection
+INFO  2021-07-04 12:33:08 [main] core.Server (Server.java:19) - Client connected
+INFO  2021-07-04 12:33:08 [main] core.Server (Server.java:17) - Awaiting client connection
+TRACE 2021-07-04 12:33:12 [Thread-1] core.ClientHandler (ClientHandler.java:49) - Client disconnected core.ClientHandler@7a60d78b
+TRACE 2021-07-04 12:34:31 [main] core.Server (Server.java:15) - Server started
+INFO  2021-07-04 12:34:31 [main] core.Server (Server.java:17) - Awaiting client connection
+INFO  2021-07-04 12:34:40 [main] core.Server (Server.java:19) - Client connected
+INFO  2021-07-04 12:34:40 [main] core.Server (Server.java:17) - Awaiting client connection
+TRACE 2021-07-04 12:34:44 [Thread-1] core.ClientHandler (ClientHandler.java:51) - IOE
+TRACE 2021-07-04 12:36:28 [main] core.Server (Server.java:15) - Server started
+INFO  2021-07-04 12:36:28 [main] core.Server (Server.java:17) - Awaiting client connection
+INFO  2021-07-04 12:36:31 [main] core.Server (Server.java:19) - Client connected
+INFO  2021-07-04 12:36:31 [main] core.Server (Server.java:17) - Awaiting client connection
+TRACE 2021-07-04 12:36:35 [Thread-1] core.ClientHandler (ClientHandler.java:51) - IOE
+INFO  2021-07-04 12:36:52 [main] core.Server (Server.java:19) - Client connected
+INFO  2021-07-04 12:36:52 [main] core.Server (Server.java:17) - Awaiting client connection
+TRACE 2021-07-04 12:36:57 [Thread-2] core.ClientHandler (ClientHandler.java:51) - IOE
+TRACE 2021-07-04 12:39:41 [main] core.Server (Server.java:15) - Server started
+INFO  2021-07-04 12:39:41 [main] core.Server (Server.java:17) - Awaiting client connection
+INFO  2021-07-04 12:39:48 [main] core.Server (Server.java:19) - Client connected
+INFO  2021-07-04 12:39:48 [main] core.Server (Server.java:17) - Awaiting client connection
+TRACE 2021-07-04 12:41:03 [main] core.Server (Server.java:15) - Server started
+INFO  2021-07-04 12:41:03 [main] core.Server (Server.java:17) - Awaiting client connection
+INFO  2021-07-04 12:41:06 [main] core.Server (Server.java:19) - Client connected
+INFO  2021-07-04 12:41:06 [main] core.Server (Server.java:17) - Awaiting client connection
+TRACE 2021-07-04 12:42:31 [Thread-1] core.ClientHandler (ClientHandler.java:51) - IOE
+TRACE 2021-07-04 12:42:52 [main] core.Server (Server.java:15) - Server started
+INFO  2021-07-04 12:42:52 [main] core.Server (Server.java:17) - Awaiting client connection
+INFO  2021-07-04 12:42:57 [main] core.Server (Server.java:19) - Client connected
+INFO  2021-07-04 12:42:57 [main] core.Server (Server.java:17) - Awaiting client connection
+TRACE 2021-07-04 12:43:29 [main] core.Server (Server.java:15) - Server started
+INFO  2021-07-04 12:43:29 [main] core.Server (Server.java:17) - Awaiting client connection
+INFO  2021-07-04 12:43:32 [main] core.Server (Server.java:19) - Client connected
+INFO  2021-07-04 12:43:32 [main] core.Server (Server.java:17) - Awaiting client connection
+TRACE 2021-07-04 12:44:14 [Thread-1] core.ClientHandler (ClientHandler.java:88) - Connection interrupted core.ClientHandler@7a60d78b
+TRACE 2021-07-04 12:44:14 [Thread-1] core.ClientHandler (ClientHandler.java:51) - IOE
+TRACE 2021-07-04 12:44:43 [main] core.Server (Server.java:15) - Server started
+INFO  2021-07-04 12:44:43 [main] core.Server (Server.java:17) - Awaiting client connection
+INFO  2021-07-04 12:44:47 [main] core.Server (Server.java:19) - Client connected
+INFO  2021-07-04 12:44:47 [main] core.Server (Server.java:17) - Awaiting client connection
+TRACE 2021-07-04 12:46:04 [Thread-1] core.ClientHandler (ClientHandler.java:90) - Connection interrupted core.ClientHandler@1fc56a67
+TRACE 2021-07-04 12:46:04 [Thread-1] core.ClientHandler (ClientHandler.java:51) - IOE
+TRACE 2021-07-04 12:46:07 [main] core.Server (Server.java:15) - Server started
+INFO  2021-07-04 12:46:07 [main] core.Server (Server.java:17) - Awaiting client connection
+INFO  2021-07-04 12:46:10 [main] core.Server (Server.java:19) - Client connected
+INFO  2021-07-04 12:46:10 [main] core.Server (Server.java:17) - Awaiting client connection
+INFO  2021-07-04 12:46:12 [main] core.Server (Server.java:19) - Client connected
+INFO  2021-07-04 12:46:12 [main] core.Server (Server.java:17) - Awaiting client connection
+TRACE 2021-07-04 12:47:15 [main] core.Server (Server.java:15) - Server started
+INFO  2021-07-04 12:47:15 [main] core.Server (Server.java:17) - Awaiting client connection
+INFO  2021-07-04 12:47:17 [main] core.Server (Server.java:19) - Client connected
+INFO  2021-07-04 12:47:17 [main] core.Server (Server.java:17) - Awaiting client connection
+TRACE 2021-07-04 12:48:43 [main] core.Server (Server.java:15) - Server started
+INFO  2021-07-04 12:48:43 [main] core.Server (Server.java:17) - Awaiting client connection
+INFO  2021-07-04 12:48:46 [main] core.Server (Server.java:19) - Client connected
+INFO  2021-07-04 12:48:46 [main] core.Server (Server.java:17) - Awaiting client connection
+TRACE 2021-07-04 12:49:19 [main] core.Server (Server.java:15) - Server started
+INFO  2021-07-04 12:49:19 [main] core.Server (Server.java:17) - Awaiting client connection
+INFO  2021-07-04 12:49:29 [main] core.Server (Server.java:19) - Client connected
+INFO  2021-07-04 12:49:29 [main] core.Server (Server.java:17) - Awaiting client connection
+TRACE 2021-07-04 12:52:29 [main] core.Server (Server.java:15) - Server started
+INFO  2021-07-04 12:52:29 [main] core.Server (Server.java:17) - Awaiting client connection
+INFO  2021-07-04 12:52:33 [main] core.Server (Server.java:19) - Client connected
+INFO  2021-07-04 12:52:33 [main] core.Server (Server.java:17) - Awaiting client connection
+TRACE 2021-07-04 12:53:11 [Thread-1] core.ClientHandler (ClientHandler.java:51) - IOE
+TRACE 2021-07-04 13:06:24 [main] core.Server (Server.java:15) - Server started
+INFO  2021-07-04 13:06:24 [main] core.Server (Server.java:17) - Awaiting client connection
+INFO  2021-07-04 13:06:25 [main] core.Server (Server.java:19) - Client connected
+INFO  2021-07-04 13:06:25 [main] core.Server (Server.java:17) - Awaiting client connection
+TRACE 2021-07-04 13:08:25 [main] core.Server (Server.java:15) - Server started
+INFO  2021-07-04 13:08:25 [main] core.Server (Server.java:17) - Awaiting client connection
+INFO  2021-07-04 13:08:28 [main] core.Server (Server.java:19) - Client connected
+INFO  2021-07-04 13:08:28 [main] core.Server (Server.java:17) - Awaiting client connection
+TRACE 2021-07-04 13:08:57 [Thread-1] core.ClientHandler (ClientHandler.java:51) - IOE
+INFO  2021-07-04 13:08:59 [main] core.Server (Server.java:19) - Client connected
+INFO  2021-07-04 13:08:59 [main] core.Server (Server.java:17) - Awaiting client connection
+INFO  2021-07-04 13:09:01 [main] core.Server (Server.java:19) - Client connected
+INFO  2021-07-04 13:09:01 [main] core.Server (Server.java:17) - Awaiting client connection
+TRACE 2021-07-04 13:09:35 [Thread-2] core.ClientHandler (ClientHandler.java:51) - IOE
+TRACE 2021-07-04 13:09:35 [Thread-3] core.ClientHandler (ClientHandler.java:51) - IOE
