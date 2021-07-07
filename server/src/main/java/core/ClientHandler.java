@@ -1,12 +1,21 @@
 package core;
 
+import com.google.common.base.Charsets;
+import com.google.common.io.ByteStreams;
+import com.google.common.io.CharStreams;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
-import org.apache.logging.log4j.core.util.JsonUtils;
 
 import java.io.*;
 import java.net.Socket;
 import java.net.SocketException;
+import java.nio.charset.StandardCharsets;
+import java.nio.file.Files;
+import java.nio.file.Path;
+import java.nio.file.Paths;
+import java.util.Arrays;
+import java.util.List;
+import java.util.stream.Collectors;
 
 public class ClientHandler implements Runnable {
 
@@ -45,7 +54,7 @@ public class ClientHandler implements Runnable {
         } catch (StringIndexOutOfBoundsException e) {
             LOG.trace("Client disconnected " + this);
         } catch (IOException e) {
-            LOG.trace("IOE");
+            LOG.trace("Client suddenly disconnected");
         } finally {
             try {
                 dis.close();
@@ -82,6 +91,12 @@ public class ClientHandler implements Runnable {
             LOG.trace("Connection interrupted " + this);
         } catch (IOException e) {
             LOG.trace("IO exception when receive file");
+        } finally {
+            try {
+                fos.close();
+            } catch (IOException e) {
+                e.printStackTrace();
+            }
         }
     }
 }
