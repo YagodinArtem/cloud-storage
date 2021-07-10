@@ -77,3 +77,5 @@ ERROR 2021-07-07 23:24:52 [JavaFX Application Thread] UiController (UiController
 ERROR 2021-07-07 23:25:12 [JavaFX Application Thread] UiController (UiController.java:117) - Exception I/O when sending file
 ERROR 2021-07-07 23:27:08 [JavaFX Application Thread] UiController (UiController.java:114) - Exception I/O when sending file
 ERROR 2021-07-07 23:28:29 [JavaFX Application Thread] UiController (UiController.java:114) - Exception I/O when sending file
+ERROR 2021-07-10 12:28:09 [JavaFX Application Thread] UiController (UiController.java:158) - Unable to copy file in local storage
+ERROR 2021-07-10 12:28:09 [JavaFX Application Thread] UiController (UiController.java:114) - Exception I/O when sending file

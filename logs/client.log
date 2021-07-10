@@ -358,3 +358,13 @@ TRACE 2021-07-07 23:29:28 [JavaFX Application Thread] UiController (UiController
 TRACE 2021-07-07 23:29:28 [JavaFX Application Thread] UiController (UiController.java:109) - Transfer finished successfully 20210315185953_1.jpg size: 176494
 TRACE 2021-07-07 23:29:31 [JavaFX Application Thread] UiController (UiController.java:103) - Transfer started - 20210319221202_1.jpg size: 402035
 TRACE 2021-07-07 23:29:31 [JavaFX Application Thread] UiController (UiController.java:109) - Transfer finished successfully 20210319221202_1.jpg size: 402035
+TRACE 2021-07-10 12:27:56 [JavaFX Application Thread] UiController (UiController.java:77) - Client started
+TRACE 2021-07-10 12:28:04 [JavaFX Application Thread] UiController (UiController.java:103) - Transfer started - img.png size: 2309506
+TRACE 2021-07-10 12:28:04 [JavaFX Application Thread] UiController (UiController.java:109) - Transfer finished successfully img.png size: 2309506
+TRACE 2021-07-10 12:28:21 [JavaFX Application Thread] UiController (UiController.java:103) - Transfer started - 20210315185953_1.jpg size: 176494
+TRACE 2021-07-10 12:28:21 [JavaFX Application Thread] UiController (UiController.java:109) - Transfer finished successfully 20210315185953_1.jpg size: 176494
+TRACE 2021-07-10 12:28:48 [JavaFX Application Thread] UiController (UiController.java:103) - Transfer started - git commands.txt size: 7315
+TRACE 2021-07-10 12:28:48 [JavaFX Application Thread] UiController (UiController.java:109) - Transfer finished successfully git commands.txt size: 7315
+TRACE 2021-07-10 12:29:10 [JavaFX Application Thread] UiController (UiController.java:77) - Client started
+TRACE 2021-07-10 12:29:16 [JavaFX Application Thread] UiController (UiController.java:103) - Transfer started - 20210314132444_1.jpg size: 248563
+TRACE 2021-07-10 12:29:16 [JavaFX Application Thread] UiController (UiController.java:109) - Transfer finished successfully 20210314132444_1.jpg size: 248563

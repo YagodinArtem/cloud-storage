@@ -1,0 +1,264 @@
+git --version
+
+git config --global user.name "ArtemYagodin"
+
+git config --global user.name // check this setting ^
+
+git config --global user.email ""
+
+git config --global color.ui auto
+
+git config --global core.editor "program"
+
+git config --list
+
+
+____________________________________________ Basic commands
+
+ls (show current files and directories)
+cd (change directory)
+
+cd ~ home directory (user directory)
+cd ../../ (go to the upper level directory or semi lvl s upper)
+
+mkdir TestDir (make new directory)
+
+touch Test.txt (create a file)
+
+cp Test.txt Test_copy.txt (copy a file)
+
+mv Test.txt Test_original.txt (rename a file)
+
+echo "Hello" > Test_origianl.txt (write smthng in a file)
+
+cat Test_original.txt (show file inputs)
+
+rm Test_original.txt (remove file)
+
+rm -R TestDir (recursive deletion)
+
+
+____________________________________________ Repository cmnds
+
+git init (creating an empty repo by creating it`s own system folder)
+
+ls -a (show all files including hidden)
+ls -a images (shows hidden files in some directory example images)
+
+git status (shows information about repo)
+
+git remote add origin git@github.com:YagodinArtem/repo-github.git 
+(added link to remote repository, example on github.com)
+
+git remote -v (shows was the link created or not)
+
+
+
+____________________________________________ Commits cmnds
+
+git add readme.md (add`s current file to commit)
+
+git add . (add all files in a directory to commit)
+
+git status (shows information about repo)
+
+git rm --cached <file> (removes file from commit in case of some mistake)
+
+git commit 
+(u must add the information whats was changed and added to this current commit)
+(make a new commit of changes)
+> press i to enter text
+> enter your message
+> ESC to exit
+> enter special cmnd :w (write) q (quit) ->> :wq
+
+git commit -m "message" (for if u didnt want to open text manager)
+
+git commit -a
+git commit -am "edited readme.md" (add commit and message)
+
+git touch images/.gitkeep 
+(adds a special hidden file witch will cause forced push to the repo)
+
+git touch .gitignore 
+(creates a special cmnd file witch used to 
+ignore some files in commit, example pswrds or such private information)
+
+echo "config" > .gitignore (place name of a file "config" witch will be ignored)
+
+____________________________________________ History work
+
+git log
+
+git log --oneline
+
+git reset 6518b65 (resets yout projects to the substance of choosed commit u can 
+use full or smaller HASH of the commit)
+
+git reflog (if u need to go to the upper version witch was deleted by reset command)
+
+Git remebers all commit operations and substances of repo, all u need is hash code of the commit
+
+git revert 9c098d7 (dont callback the previous commit but creates a new one and discards changes of choosed commit)
+
+git restore (restores file substance to start)
+
+
+	       меняет индекс	меняет файлы	нужно бытьвнимательным
+reset --soft	нет	нет	нет
+reset [--mixed]	да	нет	нет
+reset --hard	да	да	да
+
+
+____________________________________________ Branch work
+
+git branch (inspect all branches)
+
+git branch dev (create new branch)
+
+git checkout dev (choose branch)
+
+git branch dev-master master (uses master branch to startpoint)
+
+git checkout -b dev-test (switches and creates a new branch)
+
+____________________________________________ Remote repo cmnds, SSH
+
+ssh-keygen
+
+cat /c/Users/User/.ssh/id_rsa.pub (whatch your ssh public code)
+
+git clone git@github.com:YagodinArtem/project.git project 
+(clone some remote repo into your local folder project, and make a link between them)
+
+git push -u origin dev 
+(push to remote repo your commits and create a new branch dev)
+
+git pull (get changes from remote repo)
+
+git fetch (download updates from repo)
+
+Чтобы удалить ветку из удаленного Git-репозитория, выполните:
+$ git push origin --delete <имя_ветки>
+
+Чтобы удалить ветку из локального Git-репозитория, выполните:
+$ git branch -d <имя_ветки>
+
+____________________________________________ Merge
+
+git merge dev 
+(this means that branch dev should 
+upload all itself changes to master branch(or branch on wich u places at))
+
+git rebase master (смещает начало ветки на последний коммит с ветки мастер)
+
+git push --force
+
+____________________________________________ Tag
+
+git tag 1.0.0
+
+git tag --list
+
+git push --tags
+
+git tag -d 1.0.1 (delete tag)
+
+git push --delete origin 1.0.1 (delete tag from github etc)
+
+____________________________________________ Pull request (запрос на слияние)
+
+____________________________________________ Hard operations
+
+__________________________________ Stash
+
+Git Stash - специальное пространство, которое хранится только на локальном репо
+и записывает все текущие изменения, отменяя состояние репозитория.
+
+git stash (все изменения выгружены во временное хранилище)
+
+git stash list
+
+git stash push new-feature.go (добавляет новый файл к уже существующему стешу)
+
+git stash pop (stash name) (развернуть стеш на текущей ветке)
+
+__________________________________ Squash
+
+git merge squash-dev --squash (для того, чтобы записать все изменения в рамках 1 коммита)
+
+git rebase -i HEAD~3 (количество коммитов которые мы хотим объединить)
+
+Открывает режим слияния коммитов с различными функциями
+
+__________________________________ Cherry Pick
+
+копирует изменения одного коммита и сохраняет их на вашу ветку
+
+git cherry-pick <commit>
+
+git cherry-pick <branch>
+
+git cherry-pick ..<branch>
+
+__________________________________ Amend
+
+git commit --amend (перезаписать последний коммит! хеши будут разные)
+
+__________________________________ Conflicts
+
+git merge --abort
+
+vi new-feature.go (открыть в текстовом редакторе!!!)
+
+__________________________________ Fork
+
+Собственная версия какого либо готово продукта (копия)
+
+Open source - программное обеспечение с открытым кодом, опубликованное
+на сервисе гитхаб и любой желающий может скопировать его себе в качестве форка
+отредактировать и вернуть обратно.
+
+Создание форк
+
+Клонирование 
+
+Разработка
+
+Публикация
+
+Создание пулл реквест - предложить свои изменения в оригинальный источник.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
