@@ -882,3 +882,22 @@ TRACE 2021-07-07 23:27:05 [pool-2-thread-2] core.ClientHandler (ClientHandler.ja
 INFO  2021-07-07 23:27:47 [main] core.Server (Server.java:25) - Client connected
 INFO  2021-07-07 23:27:47 [main] core.Server (Server.java:20) - Awaiting client connection
 TRACE 2021-07-07 23:28:25 [pool-2-thread-2] core.ClientHandler (ClientHandler.java:87) - File received: роберт седжвик алгоритмы на java.txt 0
+TRACE 2021-07-07 23:29:19 [main] core.Server (Server.java:18) - Server started
+INFO  2021-07-07 23:29:19 [main] core.Server (Server.java:20) - Awaiting client connection
+INFO  2021-07-07 23:29:22 [main] core.Server (Server.java:25) - Client connected
+INFO  2021-07-07 23:29:22 [main] core.Server (Server.java:20) - Awaiting client connection
+TRACE 2021-07-07 23:29:28 [pool-2-thread-1] core.ClientHandler (ClientHandler.java:89) - File received: 20210315185953_1.jpg 177152
+TRACE 2021-07-07 23:29:31 [pool-2-thread-1] core.ClientHandler (ClientHandler.java:89) - File received: 20210319221202_1.jpg 402432
+TRACE 2021-07-07 23:29:33 [pool-2-thread-1] core.ClientHandler (ClientHandler.java:57) - Client suddenly disconnected
+TRACE 2021-07-10 12:27:50 [main] core.Server (Server.java:18) - Server started
+INFO  2021-07-10 12:27:50 [main] core.Server (Server.java:20) - Awaiting client connection
+INFO  2021-07-10 12:27:56 [main] core.Server (Server.java:25) - Client connected
+INFO  2021-07-10 12:27:56 [main] core.Server (Server.java:20) - Awaiting client connection
+TRACE 2021-07-10 12:28:04 [pool-2-thread-1] core.ClientHandler (ClientHandler.java:80) - File received: img.png 2310144
+TRACE 2021-07-10 12:28:21 [pool-2-thread-1] core.ClientHandler (ClientHandler.java:80) - File received: 20210315185953_1.jpg 177152
+TRACE 2021-07-10 12:28:48 [pool-2-thread-1] core.ClientHandler (ClientHandler.java:80) - File received: git commands.txt 8192
+INFO  2021-07-10 12:29:10 [main] core.Server (Server.java:25) - Client connected
+INFO  2021-07-10 12:29:10 [main] core.Server (Server.java:20) - Awaiting client connection
+TRACE 2021-07-10 12:29:16 [pool-2-thread-2] core.ClientHandler (ClientHandler.java:80) - File received: 20210314132444_1.jpg 248832
+TRACE 2021-07-10 12:29:23 [pool-2-thread-1] core.ClientHandler (ClientHandler.java:48) - Client suddenly disconnected
+TRACE 2021-07-10 12:29:23 [pool-2-thread-2] core.ClientHandler (ClientHandler.java:48) - Client suddenly disconnected
