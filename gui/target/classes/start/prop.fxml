@@ -20,12 +20,12 @@
                 <Button mnemonicParsing="false" onAction="#chose" text="Chose file" GridPane.halignment="CENTER"
                         GridPane.hgrow="ALWAYS" GridPane.valignment="CENTER" GridPane.vgrow="ALWAYS"/>
                 <Button mnemonicParsing="false" text="Delete file" GridPane.columnIndex="1" GridPane.halignment="CENTER"
-                        GridPane.hgrow="ALWAYS" GridPane.valignment="CENTER" GridPane.vgrow="ALWAYS"/>
+                        GridPane.hgrow="ALWAYS" GridPane.valignment="CENTER" GridPane.vgrow="ALWAYS" onAction="#deleteFileFromClient"/>
             </children>
         </GridPane>
         <ListView prefHeight="200.0" prefWidth="200.0" VBox.vgrow="ALWAYS" fx:id="clientView"/>
-        <TextArea fx:id="Client_text_area" maxHeight="50.0" minHeight="50.0" prefHeight="200.0" prefWidth="200.0"
-                  VBox.vgrow="ALWAYS"/>
+        <TextArea fx:id="clientText" maxHeight="50.0" minHeight="50.0" prefHeight="200.0" prefWidth="200.0"
+                  VBox.vgrow="ALWAYS" editable="false"/>
     </VBox>
     <VBox minWidth="0.0" prefHeight="400.0" prefWidth="0.0" HBox.hgrow="ALWAYS">
         <Button layoutX="50.0" layoutY="210.0" mnemonicParsing="false" onAction="#send" text="Upload">
@@ -52,10 +52,10 @@
                 <Button mnemonicParsing="false" onAction="#refresh" text="Refresh" GridPane.halignment="CENTER"
                         GridPane.hgrow="ALWAYS" GridPane.valignment="CENTER" GridPane.vgrow="ALWAYS" />
                 <Button mnemonicParsing="false" text="Delete file" GridPane.columnIndex="1" GridPane.halignment="CENTER"
-                        GridPane.hgrow="ALWAYS" GridPane.valignment="CENTER" GridPane.vgrow="ALWAYS"/>
+                        GridPane.hgrow="ALWAYS" GridPane.valignment="CENTER" GridPane.vgrow="ALWAYS" onAction="#deleteFileFromServer"/>
             </children>
         </GridPane>
         <ListView prefHeight="200.0" prefWidth="200.0" VBox.vgrow="ALWAYS" fx:id="serverView"/>
-        <TextArea maxHeight="50.0" minHeight="50.0" prefHeight="200.0" prefWidth="200.0"/>
+        <TextArea maxHeight="50.0" minHeight="50.0" prefHeight="200.0" prefWidth="200.0" fx:id="serverText" editable="false"/>
     </VBox>
 </HBox>

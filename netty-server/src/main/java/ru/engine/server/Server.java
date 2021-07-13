@@ -11,6 +11,7 @@ import io.netty.handler.codec.serialization.ClassResolvers;
 import io.netty.handler.codec.serialization.ObjectDecoder;
 import io.netty.handler.codec.serialization.ObjectEncoder;
 import lombok.extern.slf4j.Slf4j;
+import ru.engine.handler.DeleteFileHandler;
 import ru.engine.handler.FileHandler;
 import ru.engine.handler.MessageHandler;
 
@@ -20,6 +21,7 @@ import java.util.Date;
 public class Server {
 
     private int PORT = 8181;
+    public static String filesServer = "netty-server/filesServer/";
 
     public Server() {
         EventLoopGroup auth = new NioEventLoopGroup(1);
@@ -35,7 +37,8 @@ public class Server {
                                     new ObjectEncoder(),
                                     new ObjectDecoder(ClassResolvers.cacheDisabled(null)),
                                     new FileHandler(),
-                                    new MessageHandler()
+                                    new MessageHandler(),
+                                    new DeleteFileHandler()
                             );
                         }
                     });

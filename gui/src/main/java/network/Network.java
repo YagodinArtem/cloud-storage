@@ -14,6 +14,7 @@ import io.netty.handler.codec.serialization.ClassResolvers;
 import io.netty.handler.codec.serialization.ObjectDecoder;
 import io.netty.handler.codec.serialization.ObjectEncoder;
 import lombok.extern.slf4j.Slf4j;
+import model.DeleteFileMessage;
 import model.FileMessage;
 
 
@@ -57,6 +58,10 @@ public class Network {
 
     public void send(FileMessage f) {
         channel.writeAndFlush(f);
+    }
+
+    public void delete(DeleteFileMessage d) {
+        channel.writeAndFlush(d);
     }
 
     public void sendMsg(String msg) {
