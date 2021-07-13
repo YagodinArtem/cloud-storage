@@ -1,6 +1,8 @@
 package network;
 
+import controller.Controller;
 import handler.FileHandler;
+import handler.RefreshHandler;
 import io.netty.bootstrap.Bootstrap;
 import io.netty.channel.ChannelFuture;
 import io.netty.channel.ChannelInitializer;
@@ -36,7 +38,8 @@ public class Network {
                                 c.pipeline().addLast(
                                         new ObjectEncoder(),
                                         new ObjectDecoder(ClassResolvers.cacheDisabled(null)),
-                                        new FileHandler()
+                                        new FileHandler(),
+                                        new RefreshHandler()
                                 );
                             }
                         });
@@ -56,7 +59,7 @@ public class Network {
         channel.writeAndFlush(f);
     }
 
-    public void upload(String fileName) {
-        channel.writeAndFlush(fileName);
+    public void sendMsg(String msg) {
+        channel.writeAndFlush(msg);
     }
 }

@@ -5,7 +5,7 @@
 <?import javafx.scene.layout.*?>
 <HBox maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0"
       prefWidth="600.0" xmlns="http://javafx.com/javafx/16" xmlns:fx="http://javafx.com/fxml/1"
-      fx:controller="Controller">
+      fx:controller="controller.Controller">
 
     <VBox prefHeight="200.0" prefWidth="100.0" HBox.hgrow="ALWAYS">
         <GridPane>
@@ -17,14 +17,13 @@
                 <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES"/>
             </rowConstraints>
             <children>
-                <Button mnemonicParsing="false" text="Chose file" GridPane.halignment="CENTER" GridPane.hgrow="ALWAYS"
-                        GridPane.valignment="CENTER" GridPane.vgrow="ALWAYS" onAction="#chose"/>
+                <Button mnemonicParsing="false" onAction="#chose" text="Chose file" GridPane.halignment="CENTER"
+                        GridPane.hgrow="ALWAYS" GridPane.valignment="CENTER" GridPane.vgrow="ALWAYS"/>
                 <Button mnemonicParsing="false" text="Delete file" GridPane.columnIndex="1" GridPane.halignment="CENTER"
                         GridPane.hgrow="ALWAYS" GridPane.valignment="CENTER" GridPane.vgrow="ALWAYS"/>
             </children>
         </GridPane>
-        <ListView prefHeight="200.0" prefWidth="200.0" VBox.vgrow="ALWAYS"/>
-        <ProgressBar prefHeight="5.0" prefWidth="264.0" progress="0.0" VBox.vgrow="ALWAYS"/>
+        <ListView prefHeight="200.0" prefWidth="200.0" VBox.vgrow="ALWAYS" fx:id="clientView"/>
         <TextArea fx:id="Client_text_area" maxHeight="50.0" minHeight="50.0" prefHeight="200.0" prefWidth="200.0"
                   VBox.vgrow="ALWAYS"/>
     </VBox>
@@ -34,14 +33,29 @@
                 <Insets left="45.0" top="60.0"/>
             </VBox.margin>
         </Button>
-        <Button mnemonicParsing="false" onAction="#upload" text="Download">
+        <Button mnemonicParsing="false" onAction="#download" text="Download">
             <VBox.margin>
                 <Insets left="35.0" top="200.0"/>
             </VBox.margin>
         </Button>
     </VBox>
     <VBox prefHeight="200.0" prefWidth="100.0" HBox.hgrow="ALWAYS">
-        <ListView prefHeight="200.0" prefWidth="200.0" VBox.vgrow="ALWAYS"/>
+        <GridPane>
+            <columnConstraints>
+                <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0"/>
+                <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0"/>
+            </columnConstraints>
+            <rowConstraints>
+                <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES"/>
+            </rowConstraints>
+            <children>
+                <Button mnemonicParsing="false" onAction="#refresh" text="Refresh" GridPane.halignment="CENTER"
+                        GridPane.hgrow="ALWAYS" GridPane.valignment="CENTER" GridPane.vgrow="ALWAYS" />
+                <Button mnemonicParsing="false" text="Delete file" GridPane.columnIndex="1" GridPane.halignment="CENTER"
+                        GridPane.hgrow="ALWAYS" GridPane.valignment="CENTER" GridPane.vgrow="ALWAYS"/>
+            </children>
+        </GridPane>
+        <ListView prefHeight="200.0" prefWidth="200.0" VBox.vgrow="ALWAYS" fx:id="serverView"/>
         <TextArea maxHeight="50.0" minHeight="50.0" prefHeight="200.0" prefWidth="200.0"/>
     </VBox>
 </HBox>
