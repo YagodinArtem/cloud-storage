@@ -8,13 +8,32 @@
     <artifactId>cloud-storage</artifactId>
     <packaging>pom</packaging>
     <version>1.0</version>
+
     <modules>
-        <module>client</module>
-        <module>server</module>
-        <module>client</module>
-        <module>client</module>
         <module>telnet-terminal</module>
+        <module>netty-server</module>
+        <module>core</module>
+        <module>gui</module>
     </modules>
+
+    <dependencies>
+        <dependency>
+            <groupId>io.netty</groupId>
+            <artifactId>netty-all</artifactId>
+            <version>4.1.59.Final</version>
+        </dependency>
+        <dependency>
+            <groupId>org.slf4j</groupId>
+            <artifactId>slf4j-log4j12</artifactId>
+            <version>1.7.30</version>
+        </dependency>
+        <dependency>
+            <groupId>org.projectlombok</groupId>
+            <artifactId>lombok</artifactId>
+            <version>1.18.16</version>
+        </dependency>
+
+    </dependencies>
 
 
 </project>
