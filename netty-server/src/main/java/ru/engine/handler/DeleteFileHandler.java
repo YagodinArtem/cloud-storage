@@ -14,7 +14,7 @@ import java.util.Objects;
 public class DeleteFileHandler extends SimpleChannelInboundHandler<DeleteFileMessage> {
 
     @Override
-    protected void channelRead0(ChannelHandlerContext ctx, DeleteFileMessage dfm) throws Exception {
+    protected void channelRead0(ChannelHandlerContext ctx, DeleteFileMessage dfm){
         for (String fileName : Objects.requireNonNull
                 (new File(Server.filesServer).list())) {
             if (fileName.contains(dfm.getName())) {
@@ -26,7 +26,7 @@ public class DeleteFileHandler extends SimpleChannelInboundHandler<DeleteFileMes
     }
 
     @Override
-    public void exceptionCaught(ChannelHandlerContext ctx, Throwable cause) throws Exception {
+    public void exceptionCaught(ChannelHandlerContext ctx, Throwable cause) {
         log.debug("DeleteFileHandler " + cause);
     }
 }

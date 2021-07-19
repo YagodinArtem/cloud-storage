@@ -28,7 +28,7 @@ public class FileHandler extends SimpleChannelInboundHandler<FileMessage> {
     }
 
     @Override
-    public void exceptionCaught(ChannelHandlerContext ctx, Throwable cause) throws Exception {
+    public void exceptionCaught(ChannelHandlerContext ctx, Throwable cause) {
         log.debug("ServerFileHandler" + cause);
     }
 

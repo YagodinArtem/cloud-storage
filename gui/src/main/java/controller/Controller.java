@@ -1,11 +1,14 @@
 package controller;
 
+import javafx.application.Platform;
 import javafx.beans.value.ObservableValue;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
 import javafx.scene.control.ListView;
 import javafx.scene.control.TextArea;
+import javafx.scene.input.KeyCode;
+import javafx.scene.input.KeyEvent;
 import javafx.stage.FileChooser;
 import lombok.Getter;
 import lombok.extern.slf4j.Slf4j;
@@ -15,7 +18,10 @@ import network.Network;
 
 import java.io.File;
 import java.net.URL;
+import java.nio.file.Paths;
 import java.util.ResourceBundle;
+
+import static com.sun.deploy.cache.Cache.copyFile;
 
 
 @Slf4j
@@ -27,8 +33,10 @@ public class Controller implements Initializable {
     public ListView<String> clientView;
     public TextArea serverText;
     public TextArea clientText;
+    public TextArea clientCurrentFolder;
+    public TextArea serverCurrentFolder;
 
-    private String clientFiles = "gui/clientFiles/";
+    private String clientFiles = "clientFiles";
     private String HOST = "localhost";
     private int PORT = 8181;
 
@@ -42,12 +50,26 @@ public class Controller implements Initializable {
     @Override
     public void initialize(URL location, ResourceBundle resources) {
         fileChooser = new FileChooser();
-        network = new Network();
-        dir = new File(clientFiles);
+
+        network = new Network(
+                this::refresh,
+
+                () -> {
+                    copyFile(fm.getFile(), new File(clientFiles + fm.getName()));
+                    Platform.runLater(this::refresh);
+                },
+
+                (String[] list) -> Platform.runLater(() -> {
+                    getServerView().getItems().clear();
+                    getServerView().getItems().addAll(list);
+                }));
+
+        File temp = new File(clientFiles);
+        dir = new File(temp.getAbsolutePath());
         if (!dir.exists()) dir.mkdir();
 
-        addViewListener(serverView,serverText);
-        addViewListener(clientView,clientText);
+        addViewListener(serverView, serverText);
+        addViewListener(clientView, clientText);
     }
 
     private void addViewListener(ListView<String> lv, TextArea ta) {
@@ -57,7 +79,8 @@ public class Controller implements Initializable {
                     try {
                         ta.clear();
                         ta.appendText(lv.getSelectionModel().getSelectedItem());
-                    } catch (NullPointerException ignored) {}
+                    } catch (NullPointerException ignored) {
+                    }
                 });
     }
 
@@ -65,7 +88,7 @@ public class Controller implements Initializable {
         if (!serverText.getText().equals("")) {
             network.sendMsg(serverText.getText());
         }
-        refreshAll();
+        refresh();
     }
 
     public void send(ActionEvent actionEvent) {
@@ -73,14 +96,14 @@ public class Controller implements Initializable {
             network.send(fm);
         } else if (fm == null && !clientText.getText().equals("")) {
             fm = new FileMessage();
-            File toSend = new File(clientFiles + clientText.getText());
+            File toSend = new File(dir.getAbsolutePath() + "\\" + clientText.getText());
             fm.setFile(toSend);
             fm.setName(toSend.getName());
             fm.setSize(toSend.length());
             network.send(fm);
             fm = null;
         }
-        refreshAll();
+        refresh();
     }
 
     public void deleteFileFromClient(ActionEvent actionEvent) {
@@ -88,7 +111,7 @@ public class Controller implements Initializable {
             File delete = new File(clientFiles + clientText.getText());
             delete.delete();
         }
-        refreshAll();
+        refresh();
     }
 
     public void deleteFileFromServer(ActionEvent actionEvent) {
@@ -118,11 +141,6 @@ public class Controller implements Initializable {
         clientText.setText(text);
     }
 
-    public void refreshAll() {
-        refreshClient();
-        refresh();
-    }
-
     public void refresh() {
         network.sendMsg("/refresh");
         refreshClient();
@@ -131,6 +149,38 @@ public class Controller implements Initializable {
     private void refreshClient() {
         clientView.getItems().clear();
         clientView.getItems().addAll(dir.list());
+        clientCurrentFolder.clear();
+        clientCurrentFolder.appendText(dir.getAbsolutePath());
     }
 
+
+    public void dirRight(ActionEvent event) {
+        if (Paths.get(dir.getAbsolutePath() +
+                "\\" + clientText.getText()).toFile().isDirectory()) {
+                dir = Paths.get(dir + "\\" +clientText.getText()).toFile();
+                System.out.println(dir.getAbsolutePath());
+                refreshClient();
+        }
+    }
+
+    public void dirLeft(ActionEvent event) {
+        if (dir.getParent() != null) {
+            dir = new File(dir.getParent());
+        } else {
+            dir = new File(System.getProperty("user.home"));
+        }
+        refreshClient();
+    }
+
+    public void enterPath(KeyEvent keyEvent) {
+        System.out.println(keyEvent.getCode() == KeyCode.ENTER);
+        if (keyEvent.getCode() == KeyCode.ENTER) {
+            try {
+                dir = new File(clientCurrentFolder.getText());
+                refreshClient();
+            } catch (Exception e) {
+
+            }
+        }
+    }
 }

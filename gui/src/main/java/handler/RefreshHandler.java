@@ -1,24 +1,26 @@
 package handler;
 
+import handler.callback.RefreshCallback;
 import io.netty.channel.ChannelHandlerContext;
 import io.netty.channel.SimpleChannelInboundHandler;
-import javafx.application.Platform;
 import lombok.extern.slf4j.Slf4j;
-import start.App;
 
 @Slf4j
 public class RefreshHandler extends SimpleChannelInboundHandler<String[]> {
 
-    @Override
-    protected void channelRead0(ChannelHandlerContext channelHandlerContext, String[] list) {
-        Platform.runLater(() -> {
-            App.controller.getServerView().getItems().clear();
-            App.controller.getServerView().getItems().addAll(list);
-        });
+    private RefreshCallback rc;
+
+    public RefreshHandler(RefreshCallback rc) {
+        this.rc = rc;
     }
 
     @Override
-    public void exceptionCaught(ChannelHandlerContext ctx, Throwable cause) throws Exception {
+    protected void channelRead0(ChannelHandlerContext channelHandlerContext, String[] list) {
+        rc.call(list);
+    }
+
+    @Override
+    public void exceptionCaught(ChannelHandlerContext ctx, Throwable cause) {
         log.debug("ClientRefreshHandler " + cause);
     }
 }

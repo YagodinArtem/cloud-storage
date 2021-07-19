@@ -7,7 +7,6 @@ import model.FileMessage;
 import ru.engine.server.Server;
 
 import java.io.File;
-import java.nio.file.NoSuchFileException;
 import java.util.Objects;
 
 @Slf4j

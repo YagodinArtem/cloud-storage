@@ -1,8 +1,9 @@
 package network;
 
-import controller.Controller;
 import handler.FileHandler;
 import handler.RefreshHandler;
+import handler.callback.FileHandlerCallback;
+import handler.callback.RefreshCallback;
 import io.netty.bootstrap.Bootstrap;
 import io.netty.channel.ChannelFuture;
 import io.netty.channel.ChannelInitializer;
@@ -25,7 +26,11 @@ public class Network {
     private int PORT = 8181;
     private String HOST = "localhost";
 
-    public Network() {
+    private ChannelFuture future;
+
+    public Network(Initializer initializer,
+                   FileHandlerCallback fhc,
+                   RefreshCallback rc) {
         Thread thread = new Thread(() -> {
             EventLoopGroup worker = new NioEventLoopGroup();
             try {
@@ -34,19 +39,21 @@ public class Network {
                         .channel(NioSocketChannel.class)
                         .handler(new ChannelInitializer<SocketChannel>() {
                             @Override
-                            protected void initChannel(SocketChannel c) throws Exception {
+                            protected void initChannel(SocketChannel c) {
                                 channel = c;
                                 c.pipeline().addLast(
                                         new ObjectEncoder(),
                                         new ObjectDecoder(ClassResolvers.cacheDisabled(null)),
-                                        new FileHandler(),
-                                        new RefreshHandler()
+                                        new FileHandler(fhc),
+                                        new RefreshHandler(rc)
                                 );
                             }
                         });
-                ChannelFuture future = bootstrap.connect(HOST, PORT).sync();
+
+                future = bootstrap.connect(HOST, PORT).sync();
+                initializer.call();
                 future.channel().closeFuture().sync();
-            } catch (Exception e) {
+            } catch (InterruptedException e) {
                 e.printStackTrace();
             } finally {
                 worker.shutdownGracefully();
