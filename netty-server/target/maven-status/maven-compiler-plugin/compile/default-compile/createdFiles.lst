@@ -1,0 +1,6 @@
+ru\Main.class
+ru\engine\server\Server.class
+ru\engine\server\Server$1.class
+ru\engine\handler\FileHandler.class
+ru\engine\handler\DeleteFileHandler.class
+ru\engine\handler\MessageHandler.class

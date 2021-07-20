@@ -16,5 +16,6 @@ public class FileMessage implements Serializable {
     private File file;
     private String name;
     private long size;
+    private String fileOwner;
 
 }

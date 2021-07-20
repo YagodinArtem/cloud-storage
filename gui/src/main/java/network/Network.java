@@ -28,8 +28,7 @@ public class Network {
 
     private ChannelFuture future;
 
-    public Network(Initializer initializer,
-                   FileHandlerCallback fhc,
+    public Network(FileHandlerCallback fhc,
                    RefreshCallback rc) {
         Thread thread = new Thread(() -> {
             EventLoopGroup worker = new NioEventLoopGroup();
@@ -51,7 +50,6 @@ public class Network {
                         });
 
                 future = bootstrap.connect(HOST, PORT).sync();
-                initializer.call();
                 future.channel().closeFuture().sync();
             } catch (InterruptedException e) {
                 e.printStackTrace();

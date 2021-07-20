@@ -3,25 +3,33 @@ package controller;
 import javafx.application.Platform;
 import javafx.beans.value.ObservableValue;
 import javafx.event.ActionEvent;
+import javafx.event.EventHandler;
 import javafx.fxml.FXML;
+import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
+import javafx.scene.Parent;
+import javafx.scene.Scene;
 import javafx.scene.control.ListView;
+import javafx.scene.control.MenuItem;
 import javafx.scene.control.TextArea;
 import javafx.scene.input.KeyCode;
 import javafx.scene.input.KeyEvent;
 import javafx.stage.FileChooser;
+import javafx.stage.Modality;
+import javafx.stage.Stage;
 import lombok.Getter;
+import lombok.SneakyThrows;
 import lombok.extern.slf4j.Slf4j;
 import model.DeleteFileMessage;
 import model.FileMessage;
 import network.Network;
+import start.App;
 
 import java.io.File;
 import java.net.URL;
+import java.nio.file.Files;
 import java.nio.file.Paths;
 import java.util.ResourceBundle;
-
-import static com.sun.deploy.cache.Cache.copyFile;
 
 
 @Slf4j
@@ -35,12 +43,16 @@ public class Controller implements Initializable {
     public TextArea clientText;
     public TextArea clientCurrentFolder;
     public TextArea serverCurrentFolder;
+    public MenuItem reg;
 
     private String clientFiles = "clientFiles";
     private String HOST = "localhost";
     private int PORT = 8181;
 
-    private Network network;
+    public static Network network;
+    public String userName;
+    public String password;
+    public String userId;
 
     private FileChooser fileChooser;
     private FileMessage fm;
@@ -52,16 +64,22 @@ public class Controller implements Initializable {
         fileChooser = new FileChooser();
 
         network = new Network(
-                this::refresh,
-
                 () -> {
-                    copyFile(fm.getFile(), new File(clientFiles + fm.getName()));
+                    Files.copy(fm.getFile().toPath(), new File(clientFiles + fm.getName()).toPath());
                     Platform.runLater(this::refresh);
                 },
 
                 (String[] list) -> Platform.runLater(() -> {
-                    getServerView().getItems().clear();
-                    getServerView().getItems().addAll(list);
+                    System.out.println(list);
+                    if (list[0].equals("registration") || list[0].equals("login")) {
+                        userName = list[1];
+                        password = list[2];
+                        userId = list[3];
+                        refresh();
+                    } else {
+                        getServerView().getItems().clear();
+                        getServerView().getItems().addAll(list);
+                    }
                 }));
 
         File temp = new File(clientFiles);
@@ -100,6 +118,7 @@ public class Controller implements Initializable {
             fm.setFile(toSend);
             fm.setName(toSend.getName());
             fm.setSize(toSend.length());
+            fm.setFileOwner(userId);
             network.send(fm);
             fm = null;
         }
@@ -142,7 +161,7 @@ public class Controller implements Initializable {
     }
 
     public void refresh() {
-        network.sendMsg("/refresh");
+        network.sendMsg("/refresh " + userId);
         refreshClient();
     }
 
@@ -157,9 +176,9 @@ public class Controller implements Initializable {
     public void dirRight(ActionEvent event) {
         if (Paths.get(dir.getAbsolutePath() +
                 "\\" + clientText.getText()).toFile().isDirectory()) {
-                dir = Paths.get(dir + "\\" +clientText.getText()).toFile();
-                System.out.println(dir.getAbsolutePath());
-                refreshClient();
+            dir = Paths.get(dir + "\\" + clientText.getText()).toFile();
+            System.out.println(dir.getAbsolutePath());
+            refreshClient();
         }
     }
 
@@ -183,4 +202,23 @@ public class Controller implements Initializable {
             }
         }
     }
+
+    public void registration(ActionEvent event) {
+        reg.setOnAction(
+                new EventHandler<ActionEvent>() {
+                    @SneakyThrows
+                    @Override
+                    public void handle(ActionEvent event) {
+                        final Stage dialog = new Stage();
+                        dialog.initModality(Modality.APPLICATION_MODAL);
+                        dialog.initOwner(App.ps);
+                        FXMLLoader loader = new FXMLLoader(getClass().getResource("popup.fxml"));
+                        Parent parent = loader.load();
+                        dialog.setScene(new Scene(parent));
+                        dialog.show();
+                    }
+                });
+    }
+
+
 }
