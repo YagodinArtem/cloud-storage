@@ -4,6 +4,7 @@ import io.netty.channel.ChannelHandlerContext;
 import io.netty.channel.SimpleChannelInboundHandler;
 import lombok.extern.log4j.Log4j;
 import model.DeleteFileMessage;
+import ru.engine.database.callback.DeleteFileCallback;
 import ru.engine.server.Server;
 
 import java.io.File;
@@ -13,16 +14,16 @@ import java.util.Objects;
 @Log4j
 public class DeleteFileHandler extends SimpleChannelInboundHandler<DeleteFileMessage> {
 
+    private DeleteFileCallback deleteFileCallback;
+
+    public DeleteFileHandler(DeleteFileCallback deleteFileCallback) {
+        this.deleteFileCallback = deleteFileCallback;
+    }
+
     @Override
-    protected void channelRead0(ChannelHandlerContext ctx, DeleteFileMessage dfm){
-        for (String fileName : Objects.requireNonNull
-                (new File(Server.filesServer).list())) {
-            if (fileName.contains(dfm.getName())) {
-                File delete = new File(Server.filesServer + fileName);
-                delete.delete();
-                ctx.writeAndFlush(new File(Server.filesServer).list());
-            }
-        }
+    protected void channelRead0(ChannelHandlerContext ctx, DeleteFileMessage dfm) {
+        log.debug(dfm.getName() + " - to delete");
+        deleteFileCallback.call(dfm);
     }
 
     @Override

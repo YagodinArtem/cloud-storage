@@ -9,8 +9,6 @@ import model.FileMessage;
 @Slf4j
 public class FileHandler extends SimpleChannelInboundHandler<FileMessage> {
 
-    private String clientFiles= "gui/clientFiles/";
-
     private FileHandlerCallback fhc;
 
     public FileHandler(FileHandlerCallback fhc) {
@@ -19,7 +17,7 @@ public class FileHandler extends SimpleChannelInboundHandler<FileMessage> {
 
     @Override
     protected void channelRead0(ChannelHandlerContext channelHandlerContext, FileMessage fm) throws Exception {
-        fhc.call();
+        fhc.call(fm);
     }
 
     @Override

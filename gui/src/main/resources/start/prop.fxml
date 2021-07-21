@@ -94,10 +94,10 @@
                         <Font size="10.0"/>
                     </font>
                 </Button>
-                <MenuButton mnemonicParsing="false" text="Settings" GridPane.columnIndex="2"
+                <MenuButton mnemonicParsing="false" text="Options" GridPane.columnIndex="2"
                             GridPane.halignment="CENTER" GridPane.valignment="CENTER">
                     <items>
-                        <MenuItem mnemonicParsing="false" text="Registration" onAction="#registration" fx:id="reg"/>
+                        <MenuItem mnemonicParsing="false" text="Login or registration" onAction="#registration" fx:id="reg"/>
                         <MenuItem mnemonicParsing="false" text="Exit"/>
                     </items>
                 </MenuButton>

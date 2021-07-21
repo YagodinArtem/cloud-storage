@@ -11,8 +11,9 @@ import io.netty.handler.codec.serialization.ClassResolvers;
 import io.netty.handler.codec.serialization.ObjectDecoder;
 import io.netty.handler.codec.serialization.ObjectEncoder;
 import lombok.extern.slf4j.Slf4j;
-import ru.engine.database.CommandCallback;
-import ru.engine.database.SaveFileCallback;
+import ru.engine.database.callback.CommandCallback;
+import ru.engine.database.callback.DeleteFileCallback;
+import ru.engine.database.callback.SaveFileCallback;
 import ru.engine.handler.DeleteFileHandler;
 import ru.engine.handler.FileHandler;
 import ru.engine.handler.MessageHandler;
@@ -23,10 +24,11 @@ import java.util.Date;
 public class Server {
 
     private int PORT = 8181;
-    public static String filesServer = "netty-server/filesServer/";
+    private ChannelFuture channelFuture;
 
     public Server(SaveFileCallback saveFileCallback,
-                  CommandCallback commandCallback) {
+                  CommandCallback commandCallback,
+                  DeleteFileCallback deleteFileCallback) {
         EventLoopGroup auth = new NioEventLoopGroup(1);
         EventLoopGroup worker = new NioEventLoopGroup();
         try {
@@ -41,11 +43,11 @@ public class Server {
                                     new ObjectDecoder(ClassResolvers.cacheDisabled(null)),
                                     new FileHandler(saveFileCallback),
                                     new MessageHandler(commandCallback),
-                                    new DeleteFileHandler()
+                                    new DeleteFileHandler(deleteFileCallback)
                             );
                         }
                     });
-            ChannelFuture channelFuture = serverBootstrap.bind(PORT).sync();
+            channelFuture = serverBootstrap.bind(PORT).sync();
             log.debug("Server started " + new Date());
             channelFuture.channel().closeFuture().sync();
         } catch (Exception e) {

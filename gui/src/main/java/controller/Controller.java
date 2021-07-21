@@ -29,6 +29,7 @@ import java.io.File;
 import java.net.URL;
 import java.nio.file.Files;
 import java.nio.file.Paths;
+import java.util.Arrays;
 import java.util.ResourceBundle;
 
 
@@ -64,21 +65,20 @@ public class Controller implements Initializable {
         fileChooser = new FileChooser();
 
         network = new Network(
-                () -> {
-                    Files.copy(fm.getFile().toPath(), new File(clientFiles + fm.getName()).toPath());
+                (FileMessage fm) -> {
+                    Files.copy(fm.getFile().toPath(), new File(clientFiles + "\\" + fm.getName()).toPath());
                     Platform.runLater(this::refresh);
                 },
 
                 (String[] list) -> Platform.runLater(() -> {
-                    System.out.println(list);
-                    if (list[0].equals("registration") || list[0].equals("login")) {
+                    if (list[0].equals("/registration") || list[0].equals("/login")) {
                         userName = list[1];
                         password = list[2];
                         userId = list[3];
                         refresh();
-                    } else {
+                    } else if (list[0].equals("/refresh")){
                         getServerView().getItems().clear();
-                        getServerView().getItems().addAll(list);
+                        getServerView().getItems().addAll(Arrays.copyOfRange(list, 1, list.length));
                     }
                 }));
 
@@ -88,6 +88,8 @@ public class Controller implements Initializable {
 
         addViewListener(serverView, serverText);
         addViewListener(clientView, clientText);
+        addDialogActionListener();
+
     }
 
     private void addViewListener(ListView<String> lv, TextArea ta) {
@@ -104,7 +106,7 @@ public class Controller implements Initializable {
 
     public void download(ActionEvent event) {
         if (!serverText.getText().equals("")) {
-            network.sendMsg(serverText.getText());
+            network.sendMsg("/download " + serverText.getText() + " " + userId);
         }
         refresh();
     }
@@ -127,7 +129,7 @@ public class Controller implements Initializable {
 
     public void deleteFileFromClient(ActionEvent actionEvent) {
         if (!clientText.getText().equals("")) {
-            File delete = new File(clientFiles + clientText.getText());
+            File delete = new File(clientCurrentFolder.getText() + "\\" + clientText.getText());
             delete.delete();
         }
         refresh();
@@ -137,6 +139,7 @@ public class Controller implements Initializable {
         if (!serverText.getText().equals("")) {
             network.delete(new DeleteFileMessage(serverText.getText()));
         }
+        refresh();
     }
 
     public void chose(ActionEvent event) {
@@ -172,7 +175,6 @@ public class Controller implements Initializable {
         clientCurrentFolder.appendText(dir.getAbsolutePath());
     }
 
-
     public void dirRight(ActionEvent event) {
         if (Paths.get(dir.getAbsolutePath() +
                 "\\" + clientText.getText()).toFile().isDirectory()) {
@@ -192,18 +194,21 @@ public class Controller implements Initializable {
     }
 
     public void enterPath(KeyEvent keyEvent) {
-        System.out.println(keyEvent.getCode() == KeyCode.ENTER);
         if (keyEvent.getCode() == KeyCode.ENTER) {
             try {
                 dir = new File(clientCurrentFolder.getText());
                 refreshClient();
             } catch (Exception e) {
-
+                e.printStackTrace();
             }
         }
     }
 
     public void registration(ActionEvent event) {
+        addDialogActionListener();
+    }
+
+    private void addDialogActionListener() {
         reg.setOnAction(
                 new EventHandler<ActionEvent>() {
                     @SneakyThrows
@@ -219,6 +224,4 @@ public class Controller implements Initializable {
                     }
                 });
     }
-
-
 }

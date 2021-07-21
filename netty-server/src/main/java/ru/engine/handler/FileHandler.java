@@ -4,7 +4,7 @@ import io.netty.channel.ChannelHandlerContext;
 import io.netty.channel.SimpleChannelInboundHandler;
 import lombok.extern.slf4j.Slf4j;
 import model.FileMessage;
-import ru.engine.database.SaveFileCallback;
+import ru.engine.database.callback.SaveFileCallback;
 
 @Slf4j
 public class FileHandler extends SimpleChannelInboundHandler<FileMessage> {
@@ -17,8 +17,7 @@ public class FileHandler extends SimpleChannelInboundHandler<FileMessage> {
 
     @Override
     protected void channelRead0(ChannelHandlerContext channelHandlerContext, FileMessage fileMessage)  {
-
-        log.debug(fileMessage.getName() + fileMessage.getSize());
+        log.debug(fileMessage.getName() + " size: " + fileMessage.getSize());
         saveFileCallback.call(fileMessage);
     }
 
