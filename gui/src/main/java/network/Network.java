@@ -18,6 +18,11 @@ import lombok.extern.slf4j.Slf4j;
 import model.DeleteFileMessage;
 import model.FileMessage;
 
+import java.io.File;
+import java.io.FileInputStream;
+import java.io.IOException;
+import java.util.Properties;
+
 
 @Slf4j
 public class Network {
@@ -50,6 +55,7 @@ public class Network {
                         });
 
                 future = bootstrap.connect(HOST, PORT).sync();
+                loginAttempt();
                 future.channel().closeFuture().sync();
             } catch (InterruptedException e) {
                 e.printStackTrace();
@@ -71,5 +77,21 @@ public class Network {
 
     public void sendMsg(String msg) {
         channel.writeAndFlush(msg);
+    }
+
+    public void loginAttempt() {
+        String propsPath = System.getProperty("user.home") + "/cloud-storage/prop.properties";
+        File props = new File(propsPath);
+        Properties p = new Properties();
+        if (props.exists()) {
+            try {
+                p.load(new FileInputStream(propsPath));
+                if (!p.getProperty("login").equals("") && !p.getProperty("password").equals("")) {
+                    sendMsg("/login " + p.getProperty("login") + " " + p.getProperty("password"));
+                }
+            } catch (IOException | NullPointerException e) {
+                log.debug("auto login cancelled, missing properties");
+            }
+        }
     }
 }

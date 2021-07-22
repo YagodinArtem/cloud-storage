@@ -1,6 +1,7 @@
 package start;
 
 import javafx.application.Application;
+import javafx.application.Platform;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
@@ -18,6 +19,7 @@ public class App extends Application {
         Parent parent = loader.load();
         primaryStage.setScene(new Scene(parent));
         ps = primaryStage;
+        primaryStage.setOnCloseRequest(e -> System.exit(0));
         primaryStage.show();
     }
 }

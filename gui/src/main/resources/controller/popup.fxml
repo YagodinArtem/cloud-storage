@@ -14,6 +14,7 @@
     <rowConstraints>
         <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES"/>
         <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES"/>
+        <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES"/>
     </rowConstraints>
     <children>
         <Label prefHeight="34.0" prefWidth="84.0" text="Login:" GridPane.halignment="CENTER"
@@ -34,5 +35,7 @@
                 GridPane.halignment="CENTER" GridPane.rowIndex="1" GridPane.valignment="CENTER"/>
         <Button layoutX="361.0" layoutY="77.0" mnemonicParsing="false" onAction="#login" text="Login"
                 GridPane.columnIndex="2" GridPane.halignment="CENTER" GridPane.valignment="CENTER"/>
+        <CheckBox fx:id="checkBox" mnemonicParsing="false" text="Stay in system" GridPane.columnIndex="1"
+                  GridPane.rowIndex="2"/>
     </children>
 </GridPane>

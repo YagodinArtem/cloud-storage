@@ -9,6 +9,7 @@ import model.FileMessage;
 import java.io.*;
 import java.sql.*;
 import java.util.ArrayList;
+import java.util.Objects;
 
 
 @Slf4j
@@ -21,9 +22,11 @@ public class DatabaseWorker {
     private final String password = "985632";
 
     private final String tempFolder = "netty-server/filesServer";
+    private StringBuilder sb;
 
     public DatabaseWorker() {
         initConnection();
+        sb = new StringBuilder();
     }
 
     /**
@@ -47,8 +50,7 @@ public class DatabaseWorker {
             saveFile.executeUpdate();
             log.debug("save file");
             return true;
-        } catch (SQLException | IOException e) {
-            e.printStackTrace();
+        } catch (Exception e) {
             log.debug("unable to save file");
             return false;
         }
@@ -56,12 +58,15 @@ public class DatabaseWorker {
 
     @SneakyThrows
     public boolean download(ChannelHandlerContext ctx, String s) {
+        for (String fileName : Objects.requireNonNull(new File(tempFolder).list())) {
+            File temp = new File(tempFolder + "\\" + fileName);
+            temp.delete();
+        }
         ResultSet rs = findFile(s.split(" "));
         if (rs.next()) {
-            System.out.println(rs.getString("content"));
             FileMessage fm = new FileMessage();
-            String filename = rs.getString("file_name");
-            File temp = new File(tempFolder + "\\" + filename);
+            String fileName = rs.getString("file_name");
+            File temp = new File(tempFolder + "\\" + fileName);
             try (InputStream is = rs.getBinaryStream("content");
                  FileOutputStream fos = new FileOutputStream(temp)) {
                 int b;
@@ -69,13 +74,11 @@ public class DatabaseWorker {
                     fos.write(b);
                 }
                 fm.setFile(temp);
-                fm.setName(filename);
+                fm.setName(fileName);
                 fm.setSize(temp.length());
                 fm.setFileOwner(rs.getString("file_owner"));
-                System.out.println(fm.getSize());
-                System.out.println(fm.getFile());
-                ctx.writeAndFlush(fm);
                 temp.delete();
+                ctx.writeAndFlush(fm);
                 return true;
             }
         }
@@ -96,9 +99,15 @@ public class DatabaseWorker {
     }
 
     private ResultSet findFile(String[] prop) throws SQLException {
+        sb.setLength(0);
         PreparedStatement findFile = connection.prepareStatement("select * from `storage`.`files` where file_name = ? && file_owner = ?;");
-        findFile.setString(1, prop[1]);
-        findFile.setInt(2, Integer.parseInt(prop[2]));
+        for (int i = 1; i < prop.length-1; i++) {
+            sb.append(prop[i]).append(" ");
+        }
+        String fileName = sb.toString().trim();
+        int fileOwner = Integer.parseInt(prop[prop.length-1]);
+        findFile.setString(1, fileName);
+        findFile.setInt(2, fileOwner);
         return findFile.executeQuery();
     }
 

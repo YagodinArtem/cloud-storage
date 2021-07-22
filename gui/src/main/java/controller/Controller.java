@@ -26,10 +26,13 @@ import network.Network;
 import start.App;
 
 import java.io.File;
+import java.io.FileOutputStream;
+import java.io.IOException;
 import java.net.URL;
 import java.nio.file.Files;
 import java.nio.file.Paths;
 import java.util.Arrays;
+import java.util.Properties;
 import java.util.ResourceBundle;
 
 
@@ -45,6 +48,7 @@ public class Controller implements Initializable {
     public TextArea clientCurrentFolder;
     public TextArea serverCurrentFolder;
     public MenuItem reg;
+    public MenuItem exit;
 
     private String clientFiles = "clientFiles";
     private String HOST = "localhost";
@@ -76,7 +80,7 @@ public class Controller implements Initializable {
                         password = list[2];
                         userId = list[3];
                         refresh();
-                    } else if (list[0].equals("/refresh")){
+                    } else if (list[0].equals("/refresh")) {
                         getServerView().getItems().clear();
                         getServerView().getItems().addAll(Arrays.copyOfRange(list, 1, list.length));
                     }
@@ -155,6 +159,7 @@ public class Controller implements Initializable {
                         fileChooser.showOpenDialog(clientText.getScene().getWindow()))));
         fm.setName(fm.getFile().getName());
         fm.setSize(fm.getFile().length());
+        fm.setFileOwner(userId);
         setClientText(fm.getName());
     }
 
@@ -204,10 +209,6 @@ public class Controller implements Initializable {
         }
     }
 
-    public void registration(ActionEvent event) {
-        addDialogActionListener();
-    }
-
     private void addDialogActionListener() {
         reg.setOnAction(
                 new EventHandler<ActionEvent>() {
@@ -224,4 +225,31 @@ public class Controller implements Initializable {
                     }
                 });
     }
+
+    public void registration(ActionEvent event) {
+        addDialogActionListener();
+    }
+
+    public void exit(ActionEvent event) {
+        String propsPath = System.getProperty("user.home") + "/cloud-storage/prop.properties";
+        File props = new File(propsPath);
+
+        Properties prop = new Properties();
+
+        prop.setProperty("login", "");
+        prop.setProperty("password", "");
+        try {
+            FileOutputStream fos = new FileOutputStream(props);
+            fos.close();
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+
+        userName = "";
+        password = "";
+        userId = "0";
+
+        refresh();
+    }
+
 }
