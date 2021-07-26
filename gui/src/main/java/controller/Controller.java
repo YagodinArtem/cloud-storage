@@ -14,6 +14,8 @@ import javafx.scene.control.MenuItem;
 import javafx.scene.control.TextArea;
 import javafx.scene.input.KeyCode;
 import javafx.scene.input.KeyEvent;
+import javafx.scene.input.MouseButton;
+import javafx.scene.input.MouseEvent;
 import javafx.stage.FileChooser;
 import javafx.stage.Modality;
 import javafx.stage.Stage;
@@ -93,6 +95,7 @@ public class Controller implements Initializable {
         addViewListener(serverView, serverText);
         addViewListener(clientView, clientText);
         addDialogActionListener();
+        setDoubleClickListener();
 
     }
 
@@ -184,7 +187,6 @@ public class Controller implements Initializable {
         if (Paths.get(dir.getAbsolutePath() +
                 "\\" + clientText.getText()).toFile().isDirectory()) {
             dir = Paths.get(dir + "\\" + clientText.getText()).toFile();
-            System.out.println(dir.getAbsolutePath());
             refreshClient();
         }
     }
@@ -252,4 +254,16 @@ public class Controller implements Initializable {
         refresh();
     }
 
+    public void setDoubleClickListener() {
+        clientView.setOnMouseClicked(event -> {
+            if(event.getButton() == MouseButton.PRIMARY && event.getClickCount() == 2) {
+                if (new File(
+                        clientCurrentFolder.getText() +
+                                "\\" +
+                                clientView.getSelectionModel().getSelectedItem()).isDirectory()) {
+                    dirRight(new ActionEvent());
+                }
+            }
+        });
+    }
 }
