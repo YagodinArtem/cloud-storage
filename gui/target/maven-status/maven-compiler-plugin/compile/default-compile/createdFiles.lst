@@ -1,9 +1,11 @@
 handler\RefreshHandler.class
-handler\callback\FileHandlerCallback.class
-network\Network$1.class
 controller\Controller.class
-network\Initializer.class
-handler\callback\RefreshCallback.class
 start\App.class
 handler\FileHandler.class
+handler\callback\FileHandlerCallback.class
+network\Network$1.class
+network\Initializer.class
+controller\Controller$1.class
+handler\callback\RefreshCallback.class
+controller\PopupController.class
 network\Network.class
