@@ -23,5 +23,6 @@ public class MessageHandler extends SimpleChannelInboundHandler<String> {
     @Override
     public void exceptionCaught(ChannelHandlerContext ctx, Throwable cause) {
         log.debug("ServerMessageHandler " + cause);
+        cause.printStackTrace();
     }
 }

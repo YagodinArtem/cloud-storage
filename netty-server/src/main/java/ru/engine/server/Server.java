@@ -23,7 +23,7 @@ import java.util.Date;
 @Slf4j
 public class Server {
 
-    private int PORT = 8181;
+    private final int PORT = 8181;
     private ChannelFuture channelFuture;
 
     public Server(SaveFileCallback saveFileCallback,

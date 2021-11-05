@@ -15,7 +15,6 @@ import javafx.scene.control.TextArea;
 import javafx.scene.input.KeyCode;
 import javafx.scene.input.KeyEvent;
 import javafx.scene.input.MouseButton;
-import javafx.scene.input.MouseEvent;
 import javafx.stage.FileChooser;
 import javafx.stage.Modality;
 import javafx.stage.Stage;
@@ -62,9 +61,9 @@ public class Controller implements Initializable {
     public String userId;
 
     private FileChooser fileChooser;
-    private FileMessage fm;
+    private FileMessage fileMessage;
 
-    private File dir;
+    private File currentDirectoryPath;
 
     @Override
     public void initialize(URL location, ResourceBundle resources) {
@@ -72,7 +71,7 @@ public class Controller implements Initializable {
 
         network = new Network(
                 (FileMessage fm) -> {
-                    Files.copy(fm.getFile().toPath(), new File(clientFiles + "\\" + fm.getName()).toPath());
+                    Files.copy(fm.getFile().toPath(), new File(currentDirectoryPath + "\\" + fm.getName()).toPath());
                     Platform.runLater(this::refresh);
                 },
 
@@ -89,8 +88,8 @@ public class Controller implements Initializable {
                 }));
 
         File temp = new File(clientFiles);
-        dir = new File(temp.getAbsolutePath());
-        if (!dir.exists()) dir.mkdir();
+        currentDirectoryPath = new File(temp.getAbsolutePath());
+        if (!currentDirectoryPath.exists()) currentDirectoryPath.mkdir();
 
         addViewListener(serverView, serverText);
         addViewListener(clientView, clientText);
@@ -119,17 +118,17 @@ public class Controller implements Initializable {
     }
 
     public void send(ActionEvent actionEvent) {
-        if (fm != null && fm.getFile() != null) {
-            network.send(fm);
-        } else if (fm == null && !clientText.getText().equals("")) {
-            fm = new FileMessage();
-            File toSend = new File(dir.getAbsolutePath() + "\\" + clientText.getText());
-            fm.setFile(toSend);
-            fm.setName(toSend.getName());
-            fm.setSize(toSend.length());
-            fm.setFileOwner(userId);
-            network.send(fm);
-            fm = null;
+        if (fileMessage != null && fileMessage.getFile() != null) {
+            network.send(fileMessage);
+        } else if (fileMessage == null && !clientText.getText().equals("")) {
+            fileMessage = new FileMessage();
+            File toSend = new File(currentDirectoryPath.getAbsolutePath() + "\\" + clientText.getText());
+            fileMessage.setFile(toSend);
+            fileMessage.setName(toSend.getName());
+            fileMessage.setSize(toSend.length());
+            fileMessage.setFileOwner(userId);
+            network.send(fileMessage);
+            fileMessage = null;
         }
         refresh();
     }
@@ -150,20 +149,20 @@ public class Controller implements Initializable {
     }
 
     public void chose(ActionEvent event) {
-        fm = new FileMessage();
+        fileMessage = new FileMessage();
         fileChooser.setTitle("Chose file");
         FileChooser.ExtensionFilter extFilter =
                 new FileChooser.ExtensionFilter("All files", "*.html", "*.jpg",
                         "*.jfif", "*.png", "*.txt", "*.mpeg4", "*.mp3", "*.wav", "*.docx", "*.xlsx", "*.xls");
         fileChooser.getExtensionFilters().add(extFilter);
 
-        fm.setFile(
+        fileMessage.setFile(
                 new File(String.valueOf(
                         fileChooser.showOpenDialog(clientText.getScene().getWindow()))));
-        fm.setName(fm.getFile().getName());
-        fm.setSize(fm.getFile().length());
-        fm.setFileOwner(userId);
-        setClientText(fm.getName());
+        fileMessage.setName(fileMessage.getFile().getName());
+        fileMessage.setSize(fileMessage.getFile().length());
+        fileMessage.setFileOwner(userId);
+        setClientText(fileMessage.getName());
     }
 
     private void setClientText(String text) {
@@ -178,24 +177,26 @@ public class Controller implements Initializable {
 
     private void refreshClient() {
         clientView.getItems().clear();
-        clientView.getItems().addAll(dir.list());
+        clientView.getItems().addAll(currentDirectoryPath.list());
+
         clientCurrentFolder.clear();
-        clientCurrentFolder.appendText(dir.getAbsolutePath());
+        clientCurrentFolder.appendText(currentDirectoryPath.getAbsolutePath());
     }
 
     public void dirRight(ActionEvent event) {
-        if (Paths.get(dir.getAbsolutePath() +
+        if (Paths.get(currentDirectoryPath.getAbsolutePath() +
                 "\\" + clientText.getText()).toFile().isDirectory()) {
-            dir = Paths.get(dir + "\\" + clientText.getText()).toFile();
+
+            currentDirectoryPath = Paths.get(currentDirectoryPath + "\\" + clientText.getText()).toFile();
             refreshClient();
         }
     }
 
     public void dirLeft(ActionEvent event) {
-        if (dir.getParent() != null) {
-            dir = new File(dir.getParent());
+        if (currentDirectoryPath.getParent() != null) {
+            currentDirectoryPath = new File(currentDirectoryPath.getParent());
         } else {
-            dir = new File(System.getProperty("user.home"));
+            currentDirectoryPath = new File(System.getProperty("user.home"));
         }
         refreshClient();
     }
@@ -203,7 +204,7 @@ public class Controller implements Initializable {
     public void enterPath(KeyEvent keyEvent) {
         if (keyEvent.getCode() == KeyCode.ENTER) {
             try {
-                dir = new File(clientCurrentFolder.getText());
+                currentDirectoryPath = new File(clientCurrentFolder.getText());
                 refreshClient();
             } catch (Exception e) {
                 e.printStackTrace();

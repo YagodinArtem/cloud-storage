@@ -17,9 +17,10 @@ public class DatabaseWorker {
 
     private Connection connection;
 
-    private final String url = "jdbc:mysql://localhost:3306/";
-    private final String username = "root";
-    private final String password = "985632";
+    private final String url = "jdbc:postgresql://localhost:5432/storage";
+
+    private final String username = "admin";
+    private final String password = "1";
 
     private final String tempFolder = "netty-server/filesServer";
     private StringBuilder sb;
@@ -43,7 +44,7 @@ public class DatabaseWorker {
         }
 
         try (FileInputStream fis = new FileInputStream(fm.getFile())) {
-            PreparedStatement saveFile = connection.prepareStatement("INSERT INTO `storage`.`files` (`file_name`, `content`, `file_owner`) VALUES (?, ?, ?);");
+            PreparedStatement saveFile = connection.prepareStatement("INSERT INTO storage.public.files (file_name, content,file_owner) VALUES (?, ?, ?);");
             saveFile.setString(1, fm.getName());
             saveFile.setBinaryStream(2, fis);
             saveFile.setInt(3, Integer.parseInt(fm.getFileOwner()));
@@ -86,13 +87,13 @@ public class DatabaseWorker {
     }
 
     public boolean deleteFile(DeleteFileMessage dfm) throws SQLException {
-        PreparedStatement deleteFile = connection.prepareStatement("delete from `storage`.`files` where file_name =?;");
+        PreparedStatement deleteFile = connection.prepareStatement("delete from storage.public.files where file_name like ?;");
         deleteFile.setString(1, dfm.getName());
         return deleteFile.executeUpdate() > 0;
     }
 
     private ResultSet findFile(FileMessage fm) throws SQLException {
-        PreparedStatement findFile = connection.prepareStatement("select * from `storage`.`files` where file_name = ? && file_owner = ?;");
+        PreparedStatement findFile = connection.prepareStatement("select * from storage.public.files where file_name like ? AND file_owner = ?;");
         findFile.setString(1, fm.getName());
         findFile.setInt(2, Integer.parseInt(fm.getFileOwner()));
         return findFile.executeQuery();
@@ -100,7 +101,7 @@ public class DatabaseWorker {
 
     private ResultSet findFile(String[] prop) throws SQLException {
         sb.setLength(0);
-        PreparedStatement findFile = connection.prepareStatement("select * from `storage`.`files` where file_name = ? && file_owner = ?;");
+        PreparedStatement findFile = connection.prepareStatement("select * from storage.public.files where file_name like ? AND file_owner = ?;");
         for (int i = 1; i < prop.length-1; i++) {
             sb.append(prop[i]).append(" ");
         }
@@ -115,7 +116,7 @@ public class DatabaseWorker {
         String[] prop = s.split(" ");
         ResultSet rs = findUser(s);
         if (!rs.next()) {
-            PreparedStatement registration = connection.prepareStatement("INSERT INTO `storage`.`users` (`username`, `password`) VALUES (?, ?);");
+            PreparedStatement registration = connection.prepareStatement("INSERT INTO storage.public.users(username, password) VALUES (?, ?);");
             registration.setString(1, prop[1]);
             registration.setString(2, prop[2]);
             registration.executeUpdate();
@@ -156,7 +157,7 @@ public class DatabaseWorker {
 
     public void refresh(ChannelHandlerContext ctx, String s) throws SQLException {
         String[] prop = s.split(" ");
-        PreparedStatement findFiles = connection.prepareStatement("select * from `storage`.`files` where file_owner=?");
+        PreparedStatement findFiles = connection.prepareStatement("select * from storage.public.files where file_owner = ?");
         findFiles.setInt(1, Integer.parseInt(prop[1]));
         ResultSet rs = findFiles.executeQuery();
         ArrayList<String> fileNames = new ArrayList<>();
@@ -170,7 +171,7 @@ public class DatabaseWorker {
     }
 
     private int getUserId(String[] prop) throws SQLException {
-        PreparedStatement findId = connection.prepareStatement("select id_user from `storage`.`users` where username=? && password=?");
+        PreparedStatement findId = connection.prepareStatement("select id from storage.public.users where username like ? AND password like ?");
         findId.setString(1,prop[1]);
         findId.setString(2,prop[2]);
         ResultSet rs = findId.executeQuery();
@@ -183,7 +184,7 @@ public class DatabaseWorker {
 
     private ResultSet findUser(String s) throws SQLException {
         String[] prop = s.split(" ");
-        PreparedStatement findUser = connection.prepareStatement("select * from `storage`.`users` where username = ? && password = ?;");
+        PreparedStatement findUser = connection.prepareStatement("select * from storage.public.users where username = ? AND password = ?;");
         findUser.setString(1, prop[1]);
         findUser.setString(2, prop[2]);
         return findUser.executeQuery();
